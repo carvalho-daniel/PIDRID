@@ -1,21 +1,21 @@
 class docente {
     nome;
+    senha;
     departamento = "ENSINO";
     telefone;
     email;
     siape;
     efetivo=false;
 
-    constructor(nome, telefone, email, siape, efeitvo=false,departamento="ENSINO") {
+    constructor(nome, telefone, email,senha, siape, efeitvo=false,departamento="ENSINO") {
         this.nome = nome;
         this.telefone = telefone;
         this.email = email;
+        this.senha = senha;
         this.siape = siape;
         this.efetivo = efeitvo;
         this.departamento = departamento;
     }
-
-
     
     get nome() {
         return this._nome;
@@ -47,6 +47,14 @@ class docente {
     
     set email(email) {
         this._email = email;
+    }
+
+    get senha(){
+        return this._senha;
+    }
+
+    set senha(senha){
+        this._senha = senha;
     }
 
     get siape() {
