@@ -8,6 +8,7 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="../js/script.js"></script>
+    <script type="module" src="../js/cria_pid.js"></script>
     <title>Cadastro PID</title>
 </head>
 <body>
@@ -38,7 +39,7 @@
                 </tr>
                 <tr>
                     <td>Total:</td>
-                    <td id="totalChDisciplinas" colspan="2">0</td>
+                    <td class="ch_ensino" id="totalChDisciplinas" colspan="2">0</td>
                 </tr>
             </tbody>
         </table>
@@ -56,14 +57,13 @@
                     <td style="width: 20%;">Carga Horária</td>
                     
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    
-                </tr>
+                <!-- não consegui adicionar sem sobrescrever as linhas que ja tem, então criei outra tabela na preguiça mesmo :) -->
+                <tbody id="atv_prep_manu">
+
+                </tbody>
                 <tr>
                     <td>Total:</td>
-                    <td>0</td>
+                    <td class="ch_ensino" id="totalChPrepManu">0</td>
                 </tr>
             </tbody>
         </table>
@@ -81,13 +81,14 @@
                     
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <tbody id="atv_apoio_ensino">
+
+                    </tbody>
                     
                 </tr>
                 <tr>
                     <td>Total:</td>
-                    <td>0</td>
+                    <td class="ch_ensino" id="totalChApoioEnsino">0</td>
                 </tr>
             </tbody>
         </table>
@@ -105,17 +106,18 @@
                     
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <tbody id="atv_orientacao">
+
+                    </tbody>
                     
                 </tr>
                 <tr>
                     <td>Total:</td>
-                    <td>0</td>
+                    <td class="ch_ensino" id="totalChOrientacao">0</td>
                 </tr>
                 <tr>
                     <td><b>TOTAL ATIVIDADES DE ENSINO:</b></td>
-                    <td>0</td>
+                    <td id="totalChEnsino">0</td>
                 </tr>
             </tbody>
         </table>
@@ -133,13 +135,14 @@
                     
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <tbody id="atv_pesq_ino">
+
+                    </tbody>
                     
                 </tr>
                 <tr>
                     <td><b>TOTAL ATIVIDADES DE PESQUISA:</b></td>
-                    <td>0</td>
+                    <td id="totalChPesquisa">0</td>
                 </tr>
             </tbody>
         </table>
@@ -157,13 +160,14 @@
                     
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <tbody id="atv_extensao">
+
+                    </tbody>
                     
                 </tr>
                 <tr>
                     <td><b>TOTAL ATIVIDADES DE EXTENSÃO:</b></td>
-                    <td>0</td>
+                    <td id="totalChExtensao">0</td>
                 </tr>
             </tbody>
         </table>
@@ -181,13 +185,42 @@
                     
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <tbody id="atv_gestao_inst_repre">
+
+                    </tbody>
                     
                 </tr>
                 <tr>
                     <td><b>TOTAL ATIVIDADES DE GESTÃO INSTITUCIONAL E REPRESENTAÇÕES:</b></td>
-                    <td>0</td>
+                    <td id="totalChGestaoInstRepre">0</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th colspan="2">Atividades de Qualificação e Capacitação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="width: 80%;">Atividade</td>
+                    <td style="width: 20%;">Carga Horária</td>
+                    
+                </tr>
+                <tr>
+                    <tbody id="atv_quali_cap">
+
+                    </tbody>
+                    
+                </tr>
+                <tr>
+                    <td><b>TOTAL ATIVIDADES DE QUALIFICAÇÃO E CAPACITAÇÃO:</b></td>
+                    <td id="totalChQualiCap">0</td>
+                </tr>
+                <tr>
+                    <td><b>TTOTAL HORAS PID:</b></td>
+                    <td id="totalChPID">0</td>
                 </tr>
             </tbody>
         </table>
