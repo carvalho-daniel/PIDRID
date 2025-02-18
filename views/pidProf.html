@@ -9,7 +9,7 @@
     <script src="../js/script.js"></script>
     <script src="../js/preenchePid.js"></script>
     <script type="module" src="../js/cria_pid.js"></script>
-    <link rel="stylesheet" href="../css/stylePid.css"> 
+    <link rel="stylesheet" href="../css/stylePidRid.css"> 
     <title>Cadastro PID</title>
 </head>
 <body>
@@ -36,7 +36,7 @@
                     </tr>
                     <tr>
                         <td colspan="3" style="text-align: center;">
-                            <button type="button" onclick="AddTableRow()" class="btn btn-primary">Adicione uma nova Disciplina</button>
+                            <button type="button" onclick="AddTableRowPid()" class="btn btn-primary">Adicione uma nova Disciplina</button>
                         </td>
                     </tr>
                     <tr>
@@ -224,10 +224,13 @@
                         <td><b>TOTAL HORAS PID:</b></td>
                         <td id="totalChPID">0</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"><input type="text" class="form-control"></td>
+                    </tr>
                 </tbody>
             </table>
         </div>
-        <div class="container teste">
+        <div class="container centralizar">
             <button id="btnEnviar" type="submit" class="btnEnviar btn btn-primary" onclick="preenchePid()"> Enviar </button>
         </div>
     </form>
