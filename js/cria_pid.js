@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
             input.type = "number";
             input.min = "0";
             input.value = p.prep_manu_ensino[chave];
+            input.className = "prep_manu_ensino";
             input.classList.add("form-control", "ch_prep_manu");
 
             colInput.appendChild(input);

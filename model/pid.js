@@ -106,6 +106,22 @@ class pid {
 
     }
 
+    setChPrepManuEnsino([]) {
+        for(var i = 0; i < this.prep_manu_ensino.length; i++) {
+            this.prep_manu_ensino[i] = [i];
+        }
+        
+    }
+
+    getChPrepManuEnsino() { return this.prep_manu_ensino; }
+    getApoioEnsino() { return this.apoio_ensino; }
+    getOrientacao() { return this.orientacao; }
+    getPesquisaIno() { return this.pesquisa_ino; }
+    getExtensao() { return this.extensao; }
+    getGestaoInstRepre() { return this.gestao_inst_repre; }
+    getQualiCapac() { return this.quali_capac; }
+    getJustificativa() { return this.justificativa; }
+
 }
 
 export default pid;
