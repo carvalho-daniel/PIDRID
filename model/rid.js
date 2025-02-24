@@ -10,10 +10,10 @@ class rid {
 
     constructor() {
         // atividades de preparação de manutenção do ensino
-        this.prep_manu_ensino["Estudo, Planejamento e Elaboração de Materiais e Práticas Pedagógicas"] = 1
-        this.prep_manu_ensino["Preparação de Aulas Teóricas e Práticas"] = 3
-        this.prep_manu_ensino["Organização de Material Pedagógico"] = 4
-        this.prep_manu_ensino["Produção e Correção dos Instrumentos de Avaliação"] = 5
+        this.prep_manu_ensino["Estudo, Planejamento e Elaboração de Materiais e Práticas Pedagógicas"] = 0
+        this.prep_manu_ensino["Preparação de Aulas Teóricas e Práticas"] = 0
+        this.prep_manu_ensino["Organização de Material Pedagógico"] = 0
+        this.prep_manu_ensino["Produção e Correção dos Instrumentos de Avaliação"] = 0
         this.prep_manu_ensino["Registro de Atividades Acadêmicas"] = 0
 
         // atividades de apoio ao ensino

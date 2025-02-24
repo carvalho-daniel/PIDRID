@@ -11,16 +11,17 @@
         crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="../js/script.js"></script>
-    <script src="../js/preenchePid.js"></script>
+    <script src="../js/preencheRid.js"></script>
     <script type="module" src="../js/cria_rid.js"></script>
-    <link rel="stylesheet" href="../css/stylePidRid.css">
+    <link rel="stylesheet" href="../css/stylePidRid.css"> 
     <title>Cadastro RID</title>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <a class="navbar-brand" href="#">Cadastro RID</a>
+            <a class="navbar-brand" href="./dadosProf.html">🏠</a>
+            <a class="navbar-brand">Cadastro RID</a>
         </div>
     </nav>
 
@@ -48,7 +49,7 @@
                     </tr>
                     <tr>
                         <td>Total:</td>
-                        <td class="ch_ensino" id="totalChDisciplinas">0</td>
+                        <td class="ch_ensino" id="">0</td>
                         <td class="ch_ensino" id="totalChDisciplinas">0</td>
                         <td></td>
                     </tr>
@@ -75,7 +76,7 @@
                 </tbody>
                 <tr>
                     <td>Total:</td>
-                    <td class="ch_ensino" id="totalChPrepManu">0</td>
+                    <td class="ch_ensino" id="">0</td>
                     <td class="ch_ensino" id="totalChPrepManu">0</td>
                 </tr>
                 </tbody>
@@ -102,7 +103,7 @@
                 </tr>
                 <tr>
                     <td>Total:</td>
-                    <td class="ch_ensino" id="totalChApoioEnsino">0</td>
+                    <td class="ch_ensino" id="">0</td>
                     <td class="ch_ensino" id="totalChApoioEnsino">0</td>
                 </tr>
                 </tbody>
@@ -129,7 +130,7 @@
                 </tr>
                 <tr>
                     <td>Total:</td>
-                    <td class="ch_ensino" id="totalChOrientacao">0</td>
+                    <td class="ch_ensino" id="">0</td>
                     <td class="ch_ensino" id="totalChOrientacao">0</td>
                 </tr>
                 <tr>
@@ -161,7 +162,7 @@
                 </tr>
                 <tr>
                     <td><b>TOTAL ATIVIDADES DE PESQUISA:</b></td>
-                    <td id="totalChPesquisa">0</td>
+                    <td id="">0</td>
                     <td id="totalChPesquisa">0</td>
                 </tr>
                 </tbody>
@@ -188,7 +189,7 @@
                 </tr>
                 <tr>
                     <td><b>TOTAL ATIVIDADES DE EXTENSÃO:</b></td>
-                    <td id="totalChExtensao">0</td>
+                    <td id="">0</td>
                     <td id="totalChExtensao">0</td>
                 </tr>
                 </tbody>
@@ -215,7 +216,7 @@
                 </tr>
                 <tr>
                     <td><b>TOTAL ATIVIDADES DE GESTÃO INSTITUCIONAL E REPRESENTAÇÕES:</b></td>
-                    <td id="totalChGestaoInstRepre">0</td>
+                    <td id="">0</td>
                     <td id="totalChGestaoInstRepre">0</td>
                 </tr>
                 </tbody>
@@ -247,15 +248,15 @@
                     <td colspan="2"><b>TOTAL HORAS RID:</b></td>
                     <td id="totalChPID">0</td>
                 </tr>
-                <tr>
-                    <td colspan="3"><input type="text" class="form-control"></td>
-                </tr>
+
+                <td colspan="3">
+                    <textarea class="form-control" rows="5" placeholder="Digite sua justificativa aqui..."></textarea>
+                </td>
                 </tbody>
             </table>
         </div>
-        <div class="container teste">
-            <button id="btnEnviar" type="submit" class="btnEnviar btn btn-primary" onclick="preenchePid()"> Enviar
-            </button>
+        <div class="container centralizar">
+            <button id="btnEnviar" type="submit" class="btnEnviar btn btn-primary" onclick="preencheRid()"> Enviar </button>
         </div>
     </form>
 

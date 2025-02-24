@@ -2,20 +2,20 @@ import rid from "../model/rid.js";
 
 // atividades de preparação e manuntençao do ensino
 document.addEventListener("DOMContentLoaded", () => {
-    let p = new rid();
+    let r = new rid();
     let tbody = document.getElementById("atv_prep_manu");
 
     if (tbody) {
         tbody.innerHTML = ""; 
 
-        for (let chave in p.prep_manu_ensino) {
+        for (let chave in r.prep_manu_ensino) {
             let row = document.createElement("tr"); 
 
             let colNome = document.createElement("td");
             colNome.textContent = chave;
 
             let colPid = document.createElement("td");
-            colPid.textContent = p.prep_manu_ensino[chave];
+            colPid.textContent = r.prep_manu_ensino[chave];
 
             let colInput = document.createElement("td");
             colInput.oninput = chTotalPrepManu; 
@@ -49,20 +49,20 @@ function chTotalPrepManu() {
 
 // atividades de apoio ao ensino
 document.addEventListener("DOMContentLoaded", () => {
-    let p = new rid();
+    let r = new rid();
     let tbody = document.getElementById("atv_apoio_ensino");
 
     if (tbody) {
         tbody.innerHTML = ""; 
 
-        for (let chave in p.apoio_ensino) {
+        for (let chave in r.apoio_ensino) {
             let row = document.createElement("tr"); 
 
             let colNome = document.createElement("td");
             colNome.textContent = chave;
 
             let colPid = document.createElement("td");
-            colPid.textContent = p.apoio_ensino[chave];
+            colPid.textContent = r.apoio_ensino[chave];
 
             let colInput = document.createElement("td");
             colInput.oninput = chTotalApoioEnsino; 
@@ -95,20 +95,20 @@ function chTotalApoioEnsino() {
 
 // atividades de orientação
 document.addEventListener("DOMContentLoaded", () => {
-    let p = new rid();
+    let r = new rid();
     let tbody = document.getElementById("atv_orientacao");
 
     if (tbody) {
         tbody.innerHTML = ""; 
 
-        for (let chave in p.orientacao) {
+        for (let chave in r.orientacao) {
             let row = document.createElement("tr"); 
 
             let colNome = document.createElement("td");
             colNome.textContent = chave;
 
             let colPid = document.createElement("td");
-            colPid.textContent = p.orientacao[chave];
+            colPid.textContent = r.orientacao[chave];
 
             let colInput = document.createElement("td");
             colInput.oninput = chTotalOrientacao; 
@@ -141,20 +141,20 @@ function chTotalOrientacao() {
 
 // atividades de pesquisa e inovação
 document.addEventListener("DOMContentLoaded", () => {
-    let p = new rid();
+    let r = new rid();
     let tbody = document.getElementById("atv_pesq_ino");
 
     if (tbody) {
         tbody.innerHTML = ""; 
 
-        for (let chave in p.pesquisa_ino) {
+        for (let chave in r.pesquisa_ino) {
             let row = document.createElement("tr"); 
 
             let colNome = document.createElement("td");
             colNome.textContent = chave;
 
             let colPid = document.createElement("td");
-            colPid.textContent = p.pesquisa_ino[chave];
+            colPid.textContent = r.pesquisa_ino[chave];
 
             let colInput = document.createElement("td");
             colInput.oninput = chTotalPesquisa; 
@@ -187,20 +187,20 @@ function chTotalPesquisa() {
 
 // atividades de extensão
 document.addEventListener("DOMContentLoaded", () => {
-    let p = new rid();
+    let r = new rid();
     let tbody = document.getElementById("atv_extensao");
 
     if (tbody) {
         tbody.innerHTML = ""; 
 
-        for (let chave in p.extensao) {
+        for (let chave in r.extensao) {
             let row = document.createElement("tr"); 
 
             let colNome = document.createElement("td");
             colNome.textContent = chave;
 
             let colPid = document.createElement("td");
-            colPid.textContent = p.extensao[chave];
+            colPid.textContent = r.extensao[chave];
 
             let colInput = document.createElement("td");
             colInput.oninput = chTotalExtensao; 
@@ -233,20 +233,20 @@ function chTotalExtensao() {
 
 // atividades de gestão institucional e representações
 document.addEventListener("DOMContentLoaded", () => {
-    let p = new rid();
+    let r = new rid();
     let tbody = document.getElementById("atv_gestao_inst_repre");
 
     if (tbody) {
         tbody.innerHTML = ""; 
 
-        for (let chave in p.orientacao) {
+        for (let chave in r.orientacao) {
             let row = document.createElement("tr"); 
 
             let colNome = document.createElement("td");
             colNome.textContent = chave;
 
             let colPid = document.createElement("td");
-            colPid.textContent = p.orientacao[chave];
+            colPid.textContent = r.orientacao[chave];
 
             let colInput = document.createElement("td");
             colInput.oninput = chTotalGestaoInstRepre; 
@@ -279,20 +279,20 @@ function chTotalGestaoInstRepre() {
 
 // atividades de qualificação e capacitação
 document.addEventListener("DOMContentLoaded", () => {
-    let p = new rid();
+    let r = new rid();
     let tbody = document.getElementById("atv_quali_cap");
 
     if (tbody) {
         tbody.innerHTML = ""; 
 
-        for (let chave in p.quali_capac) {
+        for (let chave in r.quali_capac) {
             let row = document.createElement("tr"); 
 
             let colNome = document.createElement("td");
             colNome.textContent = chave;
 
             let colPid = document.createElement("td");
-            colPid.textContent = p.quali_capac[chave];
+            colPid.textContent = r.quali_capac[chave];
 
             let colInput = document.createElement("td");
             colInput.oninput = chTotalQualiCap; 
