@@ -1,6 +1,6 @@
 import pid from "../model/pid.js";
 
-// atividades de preparação e manuntençao do ensino
+// atividades de preparação e manutenção do ensino
 document.addEventListener("DOMContentLoaded", () => {
     let p = new pid();
     let tbody = document.getElementById("atv_prep_manu");
@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let input = document.createElement("input");
             input.type = "number";
             input.min = "0";
+            input.step = "any"; // Permite números decimais
             input.value = p.prep_manu_ensino[chave];
             input.className = "prep_manu_ensino";
             input.classList.add("form-control", "ch_prep_manu");
@@ -37,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function chTotalPrepManu() {
     let total = 0;
     $(".ch_prep_manu").each(function() {
-        let valor = parseInt($(this).val()) || 0;
+        let valor = parseFloat($(this).val()) || 0; // Usando parseFloat para aceitar decimais
         total += valor;
     });
     $("#totalChPrepManu").text(total);
@@ -63,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let input = document.createElement("input");
             input.type = "number";
             input.min = "0";
+            input.step = "any"; // Permite números decimais
             input.value = p.apoio_ensino[chave];
             input.classList.add("form-control", "ch_apoio_ensino");
 
@@ -79,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function chTotalApoioEnsino() {
     let total = 0;
     $(".ch_apoio_ensino").each(function() {
-        let valor = parseInt($(this).val()) || 0;
+        let valor = parseFloat($(this).val()) || 0; // Usando parseFloat para aceitar decimais
         total += valor;
     });
     $("#totalChApoioEnsino").text(total);
@@ -105,6 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let input = document.createElement("input");
             input.type = "number";
             input.min = "0";
+            input.step = "any"; // Permite números decimais
             input.value = p.orientacao[chave];
             input.classList.add("form-control", "ch_orientacao");
 
@@ -121,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function chTotalOrientacao() {
     let total = 0;
     $(".ch_orientacao").each(function() {
-        let valor = parseInt($(this).val()) || 0;
+        let valor = parseFloat($(this).val()) || 0; // Usando parseFloat para aceitar decimais
         total += valor;
     });
     $("#totalChOrientacao").text(total);
@@ -147,6 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let input = document.createElement("input");
             input.type = "number";
             input.min = "0";
+            input.step = "any"; // Permite números decimais
             input.value = p.pesquisa_ino[chave];
             input.classList.add("form-control", "ch_pesquisa");
 
@@ -163,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function chTotalPesquisa() {
     let total = 0;
     $(".ch_pesquisa").each(function() {
-        let valor = parseInt($(this).val()) || 0;
+        let valor = parseFloat($(this).val()) || 0; // Usando parseFloat para aceitar decimais
         total += valor;
     });
     $("#totalChPesquisa").text(total);
@@ -189,6 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let input = document.createElement("input");
             input.type = "number";
             input.min = "0";
+            input.step = "any"; // Permite números decimais
             input.value = p.extensao[chave];
             input.classList.add("form-control", "ch_extensao");
 
@@ -205,7 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function chTotalExtensao() {
     let total = 0;
     $(".ch_extensao").each(function() {
-        let valor = parseInt($(this).val()) || 0;
+        let valor = parseFloat($(this).val()) || 0; // Usando parseFloat para aceitar decimais
         total += valor;
     });
     $("#totalChExtensao").text(total);
@@ -231,6 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let input = document.createElement("input");
             input.type = "number";
             input.min = "0";
+            input.step = "any"; // Permite números decimais
             input.value = p.orientacao[chave];
             input.classList.add("form-control", "ch_gestao_inst_repre");
 
@@ -247,7 +253,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function chTotalGestaoInstRepre() {
     let total = 0;
     $(".ch_gestao_inst_repre").each(function() {
-        let valor = parseInt($(this).val()) || 0;
+        let valor = parseFloat($(this).val()) || 0; // Usando parseFloat para aceitar decimais
         total += valor;
     });
     $("#totalChGestaoInstRepre").text(total);
@@ -273,6 +279,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let input = document.createElement("input");
             input.type = "number";
             input.min = "0";
+            input.step = "any"; // Permite números decimais
             input.value = p.quali_capac[chave];
             input.classList.add("form-control", "ch_quali_cap");
 
@@ -289,7 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function chTotalQualiCap() {
     let total = 0;
     $(".ch_quali_cap").each(function() {
-        let valor = parseInt($(this).val()) || 0;
+        let valor = parseFloat($(this).val()) || 0; // Usando parseFloat para aceitar decimais
         total += valor;
     });
     $("#totalChQualiCap").text(total);

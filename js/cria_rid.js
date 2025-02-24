@@ -41,10 +41,10 @@ document.addEventListener("DOMContentLoaded", () => {
 function chTotalPrepManu() {
     let total = 0;
     $(".ch_prep_manu").each(function() {
-        let valor = parseInt($(this).val()) || 0;
+        let valor = parseFloat($(this).val()) || 0;
         total += valor;
     });
-    $("#totalChPrepManu").text(total);
+    $("#totalChPrepManu").text(total); // Arredonda para 2 casas decimais
 }
 
 // atividades de apoio ao ensino
@@ -87,10 +87,10 @@ document.addEventListener("DOMContentLoaded", () => {
 function chTotalApoioEnsino() {
     let total = 0;
     $(".ch_apoio_ensino").each(function() {
-        let valor = parseInt($(this).val()) || 0;
+        let valor = parseFloat($(this).val()) || 0;
         total += valor;
     });
-    $("#totalChApoioEnsino").text(total);
+    $("#totalChApoioEnsino").text(total); // Arredonda para 2 casas decimais
 }
 
 // atividades de orientação
@@ -133,10 +133,10 @@ document.addEventListener("DOMContentLoaded", () => {
 function chTotalOrientacao() {
     let total = 0;
     $(".ch_orientacao").each(function() {
-        let valor = parseInt($(this).val()) || 0;
+        let valor = parseFloat($(this).val()) || 0;
         total += valor;
     });
-    $("#totalChOrientacao").text(total);
+    $("#totalChOrientacao").text(total); // Arredonda para 2 casas decimais
 }
 
 // atividades de pesquisa e inovação
@@ -179,10 +179,10 @@ document.addEventListener("DOMContentLoaded", () => {
 function chTotalPesquisa() {
     let total = 0;
     $(".ch_pesquisa").each(function() {
-        let valor = parseInt($(this).val()) || 0;
+        let valor = parseFloat($(this).val()) || 0;
         total += valor;
     });
-    $("#totalChPesquisa").text(total);
+    $("#totalChPesquisa").text(total); // Arredonda para 2 casas decimais
 }
 
 // atividades de extensão
@@ -225,10 +225,10 @@ document.addEventListener("DOMContentLoaded", () => {
 function chTotalExtensao() {
     let total = 0;
     $(".ch_extensao").each(function() {
-        let valor = parseInt($(this).val()) || 0;
+        let valor = parseFloat($(this).val()) || 0;
         total += valor;
     });
-    $("#totalChExtensao").text(total);
+    $("#totalChExtensao").text(total); // Arredonda para 2 casas decimais
 }
 
 // atividades de gestão institucional e representações
@@ -271,10 +271,10 @@ document.addEventListener("DOMContentLoaded", () => {
 function chTotalGestaoInstRepre() {
     let total = 0;
     $(".ch_gestao_inst_repre").each(function() {
-        let valor = parseInt($(this).val()) || 0;
+        let valor = parseFloat($(this).val()) || 0;
         total += valor;
     });
-    $("#totalChGestaoInstRepre").text(total);
+    $("#totalChGestaoInstRepre").text(total); // Arredonda para 2 casas decimais
 }
 
 // atividades de qualificação e capacitação
@@ -317,8 +317,8 @@ document.addEventListener("DOMContentLoaded", () => {
 function chTotalQualiCap() {
     let total = 0;
     $(".ch_quali_cap").each(function() {
-        let valor = parseInt($(this).val()) || 0;
+        let valor = parseFloat($(this).val()) || 0;
         total += valor;
     });
-    $("#totalChQualiCap").text(total);
+    $("#totalChQualiCap").text(total); // Arredonda para 2 casas decimais
 }
