@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let input = document.createElement("input");
             input.type = "number";
             input.min = "0";
+            input.step = "any"; // Permite números decimais
             input.name = chave;
             input.value = p.apoio_ensino[chave];
             input.classList.add("form-control", "ch_apoio_ensino");
