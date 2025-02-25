@@ -7,7 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="../js/script.js"></script>
-    <script src="../js/preenchePid.js"></script>
+    <script type="module" src="../js/preenchePid.js"></script>
     <script type="module" src="../js/cria_pid.js"></script>
     <link rel="stylesheet" href="../css/stylePid.css"> 
     <title>Cadastro PID</title>
@@ -19,7 +19,7 @@
         </div>
     </nav>
 
-    <form action="#envia">
+    <form id="formPid" action="#" method="POST">
         <div class="container mt-5">
             <h2>Descreva as atividades que serão realizadas no período</h2>
             <table class="table table-bordered" id="dados">
@@ -228,7 +228,7 @@
             </table>
         </div>
         <div class="container teste">
-            <button id="btnEnviar" type="submit" class="btnEnviar btn btn-primary" onclick="preenchePid()"> Enviar </button>
+            <button id="btnEnviar" type="submit" class="btnEnviar btn btn-primary" > Enviar </button>
         </div>
     </form>
 

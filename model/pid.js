@@ -106,11 +106,8 @@ class pid {
 
     }
 
-    setChPrepManuEnsino([]) {
-        for(var i = 0; i < this.prep_manu_ensino.length; i++) {
-            this.prep_manu_ensino[i] = [i];
-        }
-        
+    setChPrepManuEnsino() {
+        console.log("opa blz ?");
     }
 
     getChPrepManuEnsino() { return this.prep_manu_ensino; }
