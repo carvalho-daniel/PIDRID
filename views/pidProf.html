@@ -9,13 +9,14 @@
     <script src="../js/script.js"></script>
     <script type="module" src="../js/preenchePid.js"></script>
     <script type="module" src="../js/cria_pid.js"></script>
-    <link rel="stylesheet" href="../css/stylePid.css"> 
+    <link rel="stylesheet" href="../css/stylePidRid.css"> 
     <title>Cadastro PID</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <a class="navbar-brand" href="#">Cadastro PID</a>
+            <a class="navbar-brand" href="./dadosProf.html">🏠</a>
+            <a class="navbar-brand" >Cadastro PID</a>
         </div>
     </nav>
 
@@ -36,7 +37,7 @@
                     </tr>
                     <tr>
                         <td colspan="3" style="text-align: center;">
-                            <button type="button" onclick="AddTableRow()" class="btn btn-primary">Adicione uma nova Disciplina</button>
+                            <button type="button" onclick="AddTableRowPid()" class="btn btn-primary">Adicione uma nova Disciplina</button>
                         </td>
                     </tr>
                     <tr>
@@ -224,6 +225,9 @@
                         <td><b>TOTAL HORAS PID:</b></td>
                         <td id="totalChPID">0</td>
                     </tr>
+                    <td colspan="2">
+                        <textarea class="form-control" rows="5" placeholder="Digite sua justificativa aqui..."></textarea>
+                    </td>
                 </tbody>
             </table>
         </div>

@@ -1,18 +1,21 @@
-import pid from "../model/pid.js";
+import rid from "../model/rid.js";
 
-// atividades de preparação e manutenção do ensino
+// atividades de preparação e manuntençao do ensino
 document.addEventListener("DOMContentLoaded", () => {
-    let p = new pid();
+    let r = new rid();
     let tbody = document.getElementById("atv_prep_manu");
 
     if (tbody) {
         tbody.innerHTML = ""; 
 
-        for (let chave in p.prep_manu_ensino) {
+        for (let chave in r.prep_manu_ensino) {
             let row = document.createElement("tr"); 
 
             let colNome = document.createElement("td");
             colNome.textContent = chave;
+
+            let colPid = document.createElement("td");
+            colPid.textContent = r.prep_manu_ensino[chave];
 
             let colInput = document.createElement("td");
             colInput.oninput = chTotalPrepManu; 
@@ -20,16 +23,13 @@ document.addEventListener("DOMContentLoaded", () => {
             let input = document.createElement("input");
             input.type = "number";
             input.min = "0";
-            input.step = "any"; // Permite números decimais
-            input.name = chave;
-            input.value = p.prep_manu_ensino[chave];
-            input.step = "any"; // Permite números decimais
-            input.name = chave;
+            input.value = 0;
             input.className = "prep_manu_ensino";
             input.classList.add("form-control", "ch_prep_manu");
 
             colInput.appendChild(input);
             row.appendChild(colNome);
+            row.appendChild(colPid);
             row.appendChild(colInput);
             tbody.appendChild(row); 
         }
@@ -41,25 +41,28 @@ document.addEventListener("DOMContentLoaded", () => {
 function chTotalPrepManu() {
     let total = 0;
     $(".ch_prep_manu").each(function() {
-        let valor = parseFloat($(this).val()) || 0; // Usando parseFloat para aceitar decimais
+        let valor = parseFloat($(this).val()) || 0;
         total += valor;
     });
-    $("#totalChPrepManu").text(total);
+    $("#totalChPrepManu").text(total); // Arredonda para 2 casas decimais
 }
 
 // atividades de apoio ao ensino
 document.addEventListener("DOMContentLoaded", () => {
-    let p = new pid();
+    let r = new rid();
     let tbody = document.getElementById("atv_apoio_ensino");
 
     if (tbody) {
         tbody.innerHTML = ""; 
 
-        for (let chave in p.apoio_ensino) {
+        for (let chave in r.apoio_ensino) {
             let row = document.createElement("tr"); 
 
             let colNome = document.createElement("td");
             colNome.textContent = chave;
+
+            let colPid = document.createElement("td");
+            colPid.textContent = r.apoio_ensino[chave];
 
             let colInput = document.createElement("td");
             colInput.oninput = chTotalApoioEnsino; 
@@ -67,13 +70,12 @@ document.addEventListener("DOMContentLoaded", () => {
             let input = document.createElement("input");
             input.type = "number";
             input.min = "0";
-            input.step = "any"; // Permite números decimais
-            input.name = chave;
-            input.value = p.apoio_ensino[chave];
+            input.value = 0;
             input.classList.add("form-control", "ch_apoio_ensino");
 
             colInput.appendChild(input);
             row.appendChild(colNome);
+            row.appendChild(colPid);
             row.appendChild(colInput);
             tbody.appendChild(row); 
         }
@@ -85,25 +87,28 @@ document.addEventListener("DOMContentLoaded", () => {
 function chTotalApoioEnsino() {
     let total = 0;
     $(".ch_apoio_ensino").each(function() {
-        let valor = parseFloat($(this).val()) || 0; // Usando parseFloat para aceitar decimais
+        let valor = parseFloat($(this).val()) || 0;
         total += valor;
     });
-    $("#totalChApoioEnsino").text(total);
+    $("#totalChApoioEnsino").text(total); // Arredonda para 2 casas decimais
 }
 
 // atividades de orientação
 document.addEventListener("DOMContentLoaded", () => {
-    let p = new pid();
+    let r = new rid();
     let tbody = document.getElementById("atv_orientacao");
 
     if (tbody) {
         tbody.innerHTML = ""; 
 
-        for (let chave in p.orientacao) {
+        for (let chave in r.orientacao) {
             let row = document.createElement("tr"); 
 
             let colNome = document.createElement("td");
             colNome.textContent = chave;
+
+            let colPid = document.createElement("td");
+            colPid.textContent = r.orientacao[chave];
 
             let colInput = document.createElement("td");
             colInput.oninput = chTotalOrientacao; 
@@ -111,13 +116,12 @@ document.addEventListener("DOMContentLoaded", () => {
             let input = document.createElement("input");
             input.type = "number";
             input.min = "0";
-            input.step = "any"; // Permite números decimais
-            input.name = chave;
-            input.value = p.orientacao[chave];
+            input.value = 0;
             input.classList.add("form-control", "ch_orientacao");
 
             colInput.appendChild(input);
             row.appendChild(colNome);
+            row.appendChild(colPid);
             row.appendChild(colInput);
             tbody.appendChild(row); 
         }
@@ -129,25 +133,28 @@ document.addEventListener("DOMContentLoaded", () => {
 function chTotalOrientacao() {
     let total = 0;
     $(".ch_orientacao").each(function() {
-        let valor = parseFloat($(this).val()) || 0; // Usando parseFloat para aceitar decimais
+        let valor = parseFloat($(this).val()) || 0;
         total += valor;
     });
-    $("#totalChOrientacao").text(total);
+    $("#totalChOrientacao").text(total); // Arredonda para 2 casas decimais
 }
 
 // atividades de pesquisa e inovação
 document.addEventListener("DOMContentLoaded", () => {
-    let p = new pid();
+    let r = new rid();
     let tbody = document.getElementById("atv_pesq_ino");
 
     if (tbody) {
         tbody.innerHTML = ""; 
 
-        for (let chave in p.pesquisa_ino) {
+        for (let chave in r.pesquisa_ino) {
             let row = document.createElement("tr"); 
 
             let colNome = document.createElement("td");
             colNome.textContent = chave;
+
+            let colPid = document.createElement("td");
+            colPid.textContent = r.pesquisa_ino[chave];
 
             let colInput = document.createElement("td");
             colInput.oninput = chTotalPesquisa; 
@@ -155,13 +162,12 @@ document.addEventListener("DOMContentLoaded", () => {
             let input = document.createElement("input");
             input.type = "number";
             input.min = "0";
-            input.step = "any"; // Permite números decimais
-            input.name = chave;
-            input.value = p.pesquisa_ino[chave];
+            input.value = 0;
             input.classList.add("form-control", "ch_pesquisa");
 
             colInput.appendChild(input);
             row.appendChild(colNome);
+            row.appendChild(colPid);
             row.appendChild(colInput);
             tbody.appendChild(row); 
         }
@@ -173,25 +179,28 @@ document.addEventListener("DOMContentLoaded", () => {
 function chTotalPesquisa() {
     let total = 0;
     $(".ch_pesquisa").each(function() {
-        let valor = parseFloat($(this).val()) || 0; // Usando parseFloat para aceitar decimais
+        let valor = parseFloat($(this).val()) || 0;
         total += valor;
     });
-    $("#totalChPesquisa").text(total);
+    $("#totalChPesquisa").text(total); // Arredonda para 2 casas decimais
 }
 
 // atividades de extensão
 document.addEventListener("DOMContentLoaded", () => {
-    let p = new pid();
+    let r = new rid();
     let tbody = document.getElementById("atv_extensao");
 
     if (tbody) {
         tbody.innerHTML = ""; 
 
-        for (let chave in p.extensao) {
+        for (let chave in r.extensao) {
             let row = document.createElement("tr"); 
 
             let colNome = document.createElement("td");
             colNome.textContent = chave;
+
+            let colPid = document.createElement("td");
+            colPid.textContent = r.extensao[chave];
 
             let colInput = document.createElement("td");
             colInput.oninput = chTotalExtensao; 
@@ -199,13 +208,12 @@ document.addEventListener("DOMContentLoaded", () => {
             let input = document.createElement("input");
             input.type = "number";
             input.min = "0";
-            input.step = "any"; // Permite números decimais
-            input.name = chave;
-            input.value = p.extensao[chave];
+            input.value = 0;
             input.classList.add("form-control", "ch_extensao");
 
             colInput.appendChild(input);
             row.appendChild(colNome);
+            row.appendChild(colPid);
             row.appendChild(colInput);
             tbody.appendChild(row); 
         }
@@ -217,25 +225,28 @@ document.addEventListener("DOMContentLoaded", () => {
 function chTotalExtensao() {
     let total = 0;
     $(".ch_extensao").each(function() {
-        let valor = parseFloat($(this).val()) || 0; // Usando parseFloat para aceitar decimais
+        let valor = parseFloat($(this).val()) || 0;
         total += valor;
     });
-    $("#totalChExtensao").text(total);
+    $("#totalChExtensao").text(total); // Arredonda para 2 casas decimais
 }
 
 // atividades de gestão institucional e representações
 document.addEventListener("DOMContentLoaded", () => {
-    let p = new pid();
+    let r = new rid();
     let tbody = document.getElementById("atv_gestao_inst_repre");
 
     if (tbody) {
         tbody.innerHTML = ""; 
 
-        for (let chave in p.orientacao) {
+        for (let chave in r.orientacao) {
             let row = document.createElement("tr"); 
 
             let colNome = document.createElement("td");
             colNome.textContent = chave;
+
+            let colPid = document.createElement("td");
+            colPid.textContent = r.orientacao[chave];
 
             let colInput = document.createElement("td");
             colInput.oninput = chTotalGestaoInstRepre; 
@@ -243,13 +254,12 @@ document.addEventListener("DOMContentLoaded", () => {
             let input = document.createElement("input");
             input.type = "number";
             input.min = "0";
-            input.step = "any"; // Permite números decimais
-            input.name = chave;
-            input.value = p.orientacao[chave];
+            input.value = 0;
             input.classList.add("form-control", "ch_gestao_inst_repre");
 
             colInput.appendChild(input);
             row.appendChild(colNome);
+            row.appendChild(colPid);
             row.appendChild(colInput);
             tbody.appendChild(row); 
         }
@@ -261,25 +271,28 @@ document.addEventListener("DOMContentLoaded", () => {
 function chTotalGestaoInstRepre() {
     let total = 0;
     $(".ch_gestao_inst_repre").each(function() {
-        let valor = parseFloat($(this).val()) || 0; // Usando parseFloat para aceitar decimais
+        let valor = parseFloat($(this).val()) || 0;
         total += valor;
     });
-    $("#totalChGestaoInstRepre").text(total);
+    $("#totalChGestaoInstRepre").text(total); // Arredonda para 2 casas decimais
 }
 
 // atividades de qualificação e capacitação
 document.addEventListener("DOMContentLoaded", () => {
-    let p = new pid();
+    let r = new rid();
     let tbody = document.getElementById("atv_quali_cap");
 
     if (tbody) {
         tbody.innerHTML = ""; 
 
-        for (let chave in p.quali_capac) {
+        for (let chave in r.quali_capac) {
             let row = document.createElement("tr"); 
 
             let colNome = document.createElement("td");
             colNome.textContent = chave;
+
+            let colPid = document.createElement("td");
+            colPid.textContent = r.quali_capac[chave];
 
             let colInput = document.createElement("td");
             colInput.oninput = chTotalQualiCap; 
@@ -287,13 +300,12 @@ document.addEventListener("DOMContentLoaded", () => {
             let input = document.createElement("input");
             input.type = "number";
             input.min = "0";
-            input.step = "any"; // Permite números decimais
-            input.name = chave;
-            input.value = p.quali_capac[chave];
+            input.value = 0;
             input.classList.add("form-control", "ch_quali_cap");
 
             colInput.appendChild(input);
             row.appendChild(colNome);
+            row.appendChild(colPid);
             row.appendChild(colInput);
             tbody.appendChild(row); 
         }
@@ -305,8 +317,8 @@ document.addEventListener("DOMContentLoaded", () => {
 function chTotalQualiCap() {
     let total = 0;
     $(".ch_quali_cap").each(function() {
-        let valor = parseFloat($(this).val()) || 0; // Usando parseFloat para aceitar decimais
+        let valor = parseFloat($(this).val()) || 0;
         total += valor;
     });
-    $("#totalChQualiCap").text(total);
+    $("#totalChQualiCap").text(total); // Arredonda para 2 casas decimais
 }
