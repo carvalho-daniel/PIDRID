@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
             input.type = "number";
             input.min = "0";
             input.step = "any"; // Permite números decimais
+            input.name = chave;
             input.value = p.prep_manu_ensino[chave];
             input.className = "prep_manu_ensino";
             input.classList.add("form-control", "ch_prep_manu");
@@ -65,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
             input.type = "number";
             input.min = "0";
             input.step = "any"; // Permite números decimais
+            input.name = chave;
             input.value = p.apoio_ensino[chave];
             input.classList.add("form-control", "ch_apoio_ensino");
 
@@ -108,6 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
             input.type = "number";
             input.min = "0";
             input.step = "any"; // Permite números decimais
+            input.name = chave;
             input.value = p.orientacao[chave];
             input.classList.add("form-control", "ch_orientacao");
 
@@ -151,6 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
             input.type = "number";
             input.min = "0";
             input.step = "any"; // Permite números decimais
+            input.name = chave;
             input.value = p.pesquisa_ino[chave];
             input.classList.add("form-control", "ch_pesquisa");
 
@@ -194,6 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
             input.type = "number";
             input.min = "0";
             input.step = "any"; // Permite números decimais
+            input.name = chave;
             input.value = p.extensao[chave];
             input.classList.add("form-control", "ch_extensao");
 
@@ -237,6 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
             input.type = "number";
             input.min = "0";
             input.step = "any"; // Permite números decimais
+            input.name = chave;
             input.value = p.orientacao[chave];
             input.classList.add("form-control", "ch_gestao_inst_repre");
 
@@ -280,6 +286,7 @@ document.addEventListener("DOMContentLoaded", () => {
             input.type = "number";
             input.min = "0";
             input.step = "any"; // Permite números decimais
+            input.name = chave;
             input.value = p.quali_capac[chave];
             input.classList.add("form-control", "ch_quali_cap");
 
