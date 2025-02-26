@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Dados recebidos:", dadosRecebidos);
         
         atribuirDadosAoModelo(dadosRecebidos);
+        window.location.replace("/views/ridProf.html");
     });
 });
 

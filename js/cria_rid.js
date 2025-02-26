@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let colNome = document.createElement("td");
             colNome.textContent = chave;
 
+            // valor do pid 
             let colPid = document.createElement("td");
             colPid.textContent = r.prep_manu_ensino[chave];
 
