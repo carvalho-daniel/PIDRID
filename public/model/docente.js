@@ -7,7 +7,7 @@ class docente {
     siape;
     efetivo=false;
 
-    constructor(nome, telefone, email,senha, siape, efeitvo=false,departamento="ENSINO") {
+    constructor(nome, telefone, email,senha, siape, efeitvo=false, departamento="ENSINO") {
         this.nome = nome;
         this.telefone = telefone;
         this.email = email;
