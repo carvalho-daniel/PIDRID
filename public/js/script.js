@@ -8,7 +8,7 @@ function AddTableRowPid() {
     var cols = "";
     cols += '<td><input type="text" placeholder="Disciplina" class="form-control" /></td>';
     cols += '<td><input type="number" min=0 placeholder="Carga Horária" class="form-control cargaHorariaDisciplina" oninput="chTotalDisciplina()" /> </td>';
-    cols += '<td style="text-align: center;"><button onclick="RemoveTableRow(this)" type="button" class="btn btn-danger btn-sm">-</button></td>';
+    cols += '<td style="text-align: center;"><button onclick="RemoveTableRow(this)" type="button" class="btn btn-danger btn-sm">Excluir</button></td>';
     
     newRow.append(cols);
 
@@ -26,7 +26,7 @@ function AddTableRowRid() {
     cols += '<td><input type="text" placeholder="Disciplina" class="form-control" /></td>';
     cols += '<td><p>0</p></td>';
     cols += '<td><input type="number" min=0 placeholder="Carga Horária" class="form-control cargaHorariaDisciplina" oninput="chTotalDisciplina()" /> </td>';
-    cols += '<td style="text-align: center;"><button onclick="RemoveTableRow(this)" type="button" class="btn btn-danger btn-sm">-</button></td>';
+    cols += '<td style="text-align: center;"><button onclick="RemoveTableRow(this)" type="button" class="btn btn-danger btn-sm">Excluir</button></td>';
     
     newRow.append(cols);
 
