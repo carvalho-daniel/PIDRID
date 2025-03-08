@@ -1,4 +1,4 @@
-const dc = require('../model/docente.js')
+const dc = require('../public/model/docente.js')
 
 exports.perfil = async function(req, res) {
     var id = req.params.id

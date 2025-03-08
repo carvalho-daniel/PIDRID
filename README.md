@@ -13,6 +13,12 @@
 #### 3. Contudo, a aplicação estara rodando no localhost da maquina. Abra seu navegador de preferencia, e na barra de pesquisa digite:
     http://localhost:3000
 
+#### 4. Construindo o banco de dados
+    no terminal, digite: 
+     - npm i dotenv
+     - npm install mysql2
+    Para rodar as variáveis que faram a conexão com o banco
+
 ## Testes
 ### Para o funcionamento do codigo é necessario:
 

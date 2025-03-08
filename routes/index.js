@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const controllerPid = require('../controller/controllerPID.js');
 
 // Rota para a página inicial
 router.get('/', (req, res) => {
@@ -12,9 +13,7 @@ router.get('/dadosProf', (req, res) => {
 });
 
 // Rota para a página PID do professor
-router.get('/pidProf', (req, res) => {
-    res.render('pidProf');
-});
+router.get('/pidProf', controllerPid.lista);
 
 // Rota para a página de registro
 router.get('/register', (req, res) => {

@@ -1,4 +1,4 @@
-class docente {
+class Docente {
     nome;
     senha;
     departamento = "ENSINO";
@@ -74,3 +74,6 @@ class docente {
     }
 
 }
+
+var doc =  new Docente();
+module.exports = doc;

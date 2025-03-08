@@ -8,7 +8,7 @@ var controllerRID = require('../controller/controllerRID');
 
 router.get('/dadosProf', controllerDoscente.perfil);
 
-router.get('/pidProf/:id', controllerPID.lista);
+router.get('/pidProf', controllerPID.lista);
 // router.post('/pidProf/:id', controllerPID.altera_pid);
 
 router.get('/ridProf/:id', controllerRID.lista);

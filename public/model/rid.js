@@ -1,4 +1,4 @@
-class rid {
+class Rid {
     prep_manu_ensino = {}
     apoio_ensino = {}
     orientacao = {}
@@ -124,4 +124,6 @@ class rid {
 
 }
 
-export default rid;
+
+var rid =  new Rid();
+module.exports = rid;
