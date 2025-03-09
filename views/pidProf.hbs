@@ -19,8 +19,20 @@
             <a class="navbar-brand" >Cadastro PID</a>
         </div>
     </nav>
+    
+    {{#if id}}
+        <div class="container">
+            <p> id do professor: {{id}} </p>
+        </div>
+    {{else}}
+        <script>
+            window.location.href = "//localhost:3000/";
+        </script>
+    {{/if}}
 
-    <form action="#envia">
+    
+
+    <form action="/ridProf/:{{id}}" method="POST">
         <div class="container mt-5">
             <h2>Descreva as atividades que serão realizadas no período</h2>
             <table class="table table-bordered" id="dados">
