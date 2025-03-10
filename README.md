@@ -6,7 +6,6 @@
 
 #### 1. Baixar node modules, no terminal do projeto digite:
     npm install
-    npm install nodemon
 
 #### 2. Após baixar, no terminal do projeto digite:
     npm start
