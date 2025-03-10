@@ -1,7 +1,8 @@
 // const dc = require('../public/model/docente.js')
-import { includeProfessor, login } from "../database.js";
 
-export async function perfil(req, res) {
+const { getProfessores, includeProfessor, login } = require('../database.js');
+
+exports.perfil = async function(req, res) {
     // var id = req.params.id
     // var docente = await dc.consulta(id)
     contexto = {
@@ -10,7 +11,7 @@ export async function perfil(req, res) {
     res.render('dadosProf', contexto);
 }
 
-export async function incluir(req, res) {
+exports.incluir = async function(req, res) {
     //nome, email, senha, telefone, siape, ch
     var nome = req.body.nome
     var email = req.body.email
@@ -19,12 +20,12 @@ export async function incluir(req, res) {
     var siape = req.body.siape
     var ch = req.body.cargaH
 
-    includeProfessor(nome, email, senha, telefone, siape, ch);
+    await includeProfessor(nome, email, senha, telefone, siape, ch);
 
     res.redirect('/');
 }
 
-export async function entrar(req, res) {
+exports.entrar = async function(req, res) {
     var email = req.body.email
     var senha = req.body.password
 
