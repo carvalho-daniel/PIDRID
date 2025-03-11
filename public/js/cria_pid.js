@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (tbody) {
         tbody.innerHTML = ""; 
-
+        var i = 0
         for (let chave in p.prep_manu_ensino) {
             let row = document.createElement("tr"); 
 
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
             input.type = "number";
             input.min = "0";
             input.step = "any"; // Permite números decimais
-            input.name = chave;
+            input.id = "atv_prep_manu_" + i;
             input.value = p.prep_manu_ensino[chave];
             input.className = "prep_manu_ensino";
             input.classList.add("form-control", "ch_prep_manu");
@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
             row.appendChild(colNome);
             row.appendChild(colInput);
             tbody.appendChild(row); 
+            i++;
         }
     } else {
         console.error("Elemento com ID 'atv_prep_manu' não encontrado!");
@@ -52,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (tbody) {
         tbody.innerHTML = ""; 
-
+        var i = 0;
         for (let chave in p.apoio_ensino) {
             let row = document.createElement("tr"); 
 
@@ -66,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
             input.type = "number";
             input.min = "0";
             input.step = "any"; // Permite números decimais
-            input.name = chave;
+            input.id = "atv_apoio_ensino_" + i;
             input.value = p.apoio_ensino[chave];
             input.classList.add("form-control", "ch_apoio_ensino");
 
@@ -74,6 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
             row.appendChild(colNome);
             row.appendChild(colInput);
             tbody.appendChild(row); 
+            i++;
         }
     } else {
         console.error("Elemento com ID 'atv_apoio_ensino' não encontrado!");
@@ -96,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (tbody) {
         tbody.innerHTML = ""; 
-
+        var i = 0;
         for (let chave in p.orientacao) {
             let row = document.createElement("tr"); 
 
@@ -110,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
             input.type = "number";
             input.min = "0";
             input.step = "any"; // Permite números decimais
-            input.name = chave;
+            input.id = "atv_orientacao_" + i;
             input.value = p.orientacao[chave];
             input.classList.add("form-control", "ch_orientacao");
 
@@ -118,6 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
             row.appendChild(colNome);
             row.appendChild(colInput);
             tbody.appendChild(row); 
+            i++;
         }
     } else {
         console.error("Elemento com ID 'atv_orientacao' não encontrado!");
@@ -140,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (tbody) {
         tbody.innerHTML = ""; 
-
+        var i = 0;
         for (let chave in p.pesquisa_ino) {
             let row = document.createElement("tr"); 
 
@@ -154,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
             input.type = "number";
             input.min = "0";
             input.step = "any"; // Permite números decimais
-            input.name = chave;
+            input.id = "atv_pesq_ino_" + i;
             input.value = p.pesquisa_ino[chave];
             input.classList.add("form-control", "ch_pesquisa");
 
@@ -162,6 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
             row.appendChild(colNome);
             row.appendChild(colInput);
             tbody.appendChild(row); 
+            i++;
         }
     } else {
         console.error("Elemento com ID 'atv_pesquisa' não encontrado!");
@@ -184,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (tbody) {
         tbody.innerHTML = ""; 
-
+        var i = 0;
         for (let chave in p.extensao) {
             let row = document.createElement("tr"); 
 
@@ -198,7 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
             input.type = "number";
             input.min = "0";
             input.step = "any"; // Permite números decimais
-            input.name = chave;
+            input.id = "atv_extensao_" + i;
             input.value = p.extensao[chave];
             input.classList.add("form-control", "ch_extensao");
 
@@ -206,6 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
             row.appendChild(colNome);
             row.appendChild(colInput);
             tbody.appendChild(row); 
+            i++;
         }
     } else {
         console.error("Elemento com ID 'atv_extensao' não encontrado!");
@@ -228,8 +233,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (tbody) {
         tbody.innerHTML = ""; 
-
-        for (let chave in p.orientacao) {
+        var i = 0;
+        for (let chave in p.gestao_inst_repre) {
             let row = document.createElement("tr"); 
 
             let colNome = document.createElement("td");
@@ -242,14 +247,15 @@ document.addEventListener("DOMContentLoaded", () => {
             input.type = "number";
             input.min = "0";
             input.step = "any"; // Permite números decimais
-            input.name = chave;
-            input.value = p.orientacao[chave];
+            input.id = "atv_gestao_inst_repre_" + i;
+            input.value = p.gestao_inst_repre[chave];
             input.classList.add("form-control", "ch_gestao_inst_repre");
 
             colInput.appendChild(input);
             row.appendChild(colNome);
             row.appendChild(colInput);
             tbody.appendChild(row); 
+            i++;
         }
     } else {
         console.error("Elemento com ID 'atv_gestao_inst_repre' não encontrado!");
@@ -272,7 +278,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (tbody) {
         tbody.innerHTML = ""; 
-
+        var i = 0
         for (let chave in p.quali_capac) {
             let row = document.createElement("tr"); 
 
@@ -286,7 +292,7 @@ document.addEventListener("DOMContentLoaded", () => {
             input.type = "number";
             input.min = "0";
             input.step = "any"; // Permite números decimais
-            input.name = chave;
+            input.id = "atv_quali_cap" + i;
             input.value = p.quali_capac[chave];
             input.classList.add("form-control", "ch_quali_cap");
 
@@ -294,6 +300,7 @@ document.addEventListener("DOMContentLoaded", () => {
             row.appendChild(colNome);
             row.appendChild(colInput);
             tbody.appendChild(row); 
+            i++;
         }
     } else {
         console.error("Elemento com ID 'atv_quali_cap' não encontrado!");

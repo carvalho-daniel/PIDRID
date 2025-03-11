@@ -42,7 +42,8 @@ class Rid {
         this.pesquisa_ino["Participação de Banca Examinadora de Monografica de Graduação e/ou Trabalho de Conclusão de Curso de Graduação ou de Curso Técnico"] = 0        
         this.pesquisa_ino["Participação de Banca Examinadora de Qualificação de Mestrado ou Douturado "] = 0        
         this.pesquisa_ino["Preparação de Artigo Técnico-Científico a ser publicado em anais de Eventos Acadêmico-Científicos Locais, Regionais, Nacionais ou Internacionais "] = 0        
-        this.pesquisa_ino["Preparação de Artigo Técnico-Científico a ser publicado em periódico de circulação local ou nacional "] = 0        
+        this.pesquisa_ino["Preparação de Artigo Técnico-Científico a ser publicado em periódico de circulação local ou nacional "] = 0  
+        this.pesquisa_ino["Preparação de Artigo Técnico-Científico a ser publicado em periódico indexado nacional ou internacional "] = 0      
         this.pesquisa_ino["Preparação de Livro ou de Capítulo de Livro Didático, Cultural ou Técnico; Produção de Relatório Técnico, Maniual Técnico e/ou Didático com ISBN "] = 0        
         this.pesquisa_ino["Editoração de Revistas Científicas Locais, Regionais, Nacionais ou Internacionais "] = 0        
         this.pesquisa_ino["Editoração, Organização e/ou Tradução de Livros e/ou Periódicos Acadêmicos, Científicos ou Técnicos"] = 0        
@@ -59,7 +60,7 @@ class Rid {
         this.pesquisa_ino["Desenvolvimento e Registro de propriedades Imtelectuais ou Inovação Tecnológica Cadastradas no NITTEC, tais como Elaboração, Submissão e Registro de Patentes, Registro de Software, Desenho Industrial ou Projeto Piloto, Entre Outras"] = 0        
         this.pesquisa_ino["Desenvolvimento de Aplicativos Computacionais, Registrados ou Publicados em Livros ou Revistas Indexadas"] = 0        
         this.pesquisa_ino["Organização e/ou Coordenação de Pesquisa de Campo Institucional "] = 0        
-        this.pesquisa_ino["Coordenação de Institutos nacionais de Ciência e Tecnologia e Inovação Externos"] = 0          
+        this.pesquisa_ino["Coordenação de Institutos nacionais de Ciência e Tecnologia e Inovação Externos"] = 0      
 
         // atividades de extensão
         this.extensao["Coordenação e Participação como Colaborador em Programas e Projetos de Extensão"] = 0 
@@ -125,5 +126,4 @@ class Rid {
 }
 
 
-var rid =  new Rid();
-module.exports = rid;
+export default Rid;

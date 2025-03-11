@@ -10,8 +10,8 @@ class pid {
 
     constructor() {
         // atividades de preparação de manutenção do ensino
-        this.prep_manu_ensino["Estudo, Planejamento e Elaboração de Materiais e Práticas Pedagógicas"] = 0
-        this.prep_manu_ensino["Preparação de Aulas Teóricas e Práticas"] = 0
+        this.prep_manu_ensino["Estudo, Planejamento e Elaboração de Materiais e Práticas Pedagógicas"] = 0 // 0 
+        this.prep_manu_ensino["Preparação de Aulas Teóricas e Práticas"] = 0 // 1
         this.prep_manu_ensino["Organização de Material Pedagógico"] = 0
         this.prep_manu_ensino["Produção e Correção dos Instrumentos de Avaliação"] = 0
         this.prep_manu_ensino["Registro de Atividades Acadêmicas"] = 0
@@ -42,7 +42,8 @@ class pid {
         this.pesquisa_ino["Participação de Banca Examinadora de Monografica de Graduação e/ou Trabalho de Conclusão de Curso de Graduação ou de Curso Técnico"] = 0        
         this.pesquisa_ino["Participação de Banca Examinadora de Qualificação de Mestrado ou Douturado "] = 0        
         this.pesquisa_ino["Preparação de Artigo Técnico-Científico a ser publicado em anais de Eventos Acadêmico-Científicos Locais, Regionais, Nacionais ou Internacionais "] = 0        
-        this.pesquisa_ino["Preparação de Artigo Técnico-Científico a ser publicado em periódico de circulação local ou nacional "] = 0        
+        this.pesquisa_ino["Preparação de Artigo Técnico-Científico a ser publicado em periódico de circulação local ou nacional "] = 0  
+        this.pesquisa_ino["Preparação de Artigo Técnico-Científico a ser publicado em periódico indexado nacional ou internacional "] = 0      
         this.pesquisa_ino["Preparação de Livro ou de Capítulo de Livro Didático, Cultural ou Técnico; Produção de Relatório Técnico, Maniual Técnico e/ou Didático com ISBN "] = 0        
         this.pesquisa_ino["Editoração de Revistas Científicas Locais, Regionais, Nacionais ou Internacionais "] = 0        
         this.pesquisa_ino["Editoração, Organização e/ou Tradução de Livros e/ou Periódicos Acadêmicos, Científicos ou Técnicos"] = 0        

@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (tbody) {
         tbody.innerHTML = ""; 
-
+        var i = 0;
         for (let chave in r.prep_manu_ensino) {
             let row = document.createElement("tr"); 
 
@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let input = document.createElement("input");
             input.type = "number";
             input.min = "0";
+            input.id = "atv_prep_manu_" + i;
             input.value = r.prep_manu_ensino[chave];
             input.className = "prep_manu_ensino";
             input.classList.add("form-control", "ch_prep_manu");
@@ -34,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
             row.appendChild(colPid);
             row.appendChild(colInput);
             tbody.appendChild(row); 
+            i++;
         }
     } else {
         console.error("Elemento com ID 'atv_prep_manu' não encontrado!");
@@ -57,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (tbody) {
         tbody.innerHTML = ""; 
-
+        var i = 0;
         for (let chave in r.apoio_ensino) {
             let row = document.createElement("tr"); 
 
@@ -73,6 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let input = document.createElement("input");
             input.type = "number";
             input.min = "0";
+            input.id = "atv_apoio_ensino" + i;
             input.value = r.apoio_ensino[chave];
             input.classList.add("form-control", "ch_apoio_ensino");
 
@@ -81,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
             row.appendChild(colPid);
             row.appendChild(colInput);
             tbody.appendChild(row); 
+            i++;
         }
     } else {
         console.error("Elemento com ID 'atv_apoio_ensino' não encontrado!");
@@ -104,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (tbody) {
         tbody.innerHTML = ""; 
-
+        var i = 0;
         for (let chave in r.orientacao) {
             let row = document.createElement("tr"); 
 
@@ -120,6 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let input = document.createElement("input");
             input.type = "number";
             input.min = "0";
+            input.id = "atv_orientacao" + i;
             input.value = r.orientacao[chave];
             input.classList.add("form-control", "ch_orientacao");
 
@@ -128,6 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
             row.appendChild(colPid);
             row.appendChild(colInput);
             tbody.appendChild(row); 
+            i++;
         }
     } else {
         console.error("Elemento com ID 'atv_orientacao' não encontrado!");
@@ -151,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (tbody) {
         tbody.innerHTML = ""; 
-
+        var i = 0;
         for (let chave in r.pesquisa_ino) {
             let row = document.createElement("tr"); 
 
@@ -167,7 +173,8 @@ document.addEventListener("DOMContentLoaded", () => {
             let input = document.createElement("input");
             input.type = "number";
             input.min = "0";
-            input.value = r.pesquisa_ino[chave];
+            input.id = "atv_pesq_ino" + i;
+            input.value = r.pesquisa_ino[chave];            
             input.classList.add("form-control", "ch_pesquisa");
 
             colInput.appendChild(input);
@@ -175,6 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
             row.appendChild(colPid);
             row.appendChild(colInput);
             tbody.appendChild(row); 
+            i++;
         }
     } else {
         console.error("Elemento com ID 'atv_pesquisa' não encontrado!");
@@ -198,22 +206,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (tbody) {
         tbody.innerHTML = ""; 
-
+        var i = 0;
         for (let chave in r.extensao) {
             let row = document.createElement("tr"); 
 
             let colNome = document.createElement("td");
             colNome.textContent = chave;
-
             let colPid = document.createElement("td");
             colPid.textContent = p.extensao[chave];
-
             let colInput = document.createElement("td");
             colInput.oninput = chTotalExtensao; 
 
             let input = document.createElement("input");
             input.type = "number";
             input.min = "0";
+            input.id = "atv_extensao_" + i;
             input.value = r.extensao[chave];
             input.classList.add("form-control", "ch_extensao");
 
@@ -222,6 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
             row.appendChild(colPid);
             row.appendChild(colInput);
             tbody.appendChild(row); 
+            i++;
         }
     } else {
         console.error("Elemento com ID 'atv_extensao' não encontrado!");
@@ -245,15 +253,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (tbody) {
         tbody.innerHTML = ""; 
-
-        for (let chave in r.orientacao) {
+        var i = 0;
+        for (let chave in r.gestao_inst_repre) {
             let row = document.createElement("tr"); 
 
             let colNome = document.createElement("td");
             colNome.textContent = chave;
 
             let colPid = document.createElement("td");
-            colPid.textContent = p.orientacao[chave];
+            colPid.textContent = p.gestao_inst_repre[chave];
 
             let colInput = document.createElement("td");
             colInput.oninput = chTotalGestaoInstRepre; 
@@ -261,14 +269,16 @@ document.addEventListener("DOMContentLoaded", () => {
             let input = document.createElement("input");
             input.type = "number";
             input.min = "0";
-            input.value = r.orientacao[chave];
+            input.id = "atv_gestao_inst_repre_" + i;
+            input.value = r.gestao_inst_repre[chave];
             input.classList.add("form-control", "ch_gestao_inst_repre");
 
             colInput.appendChild(input);
             row.appendChild(colNome);
             row.appendChild(colPid);
             row.appendChild(colInput);
-            tbody.appendChild(row); 
+            tbody.appendChild(row);
+            i++; 
         }
     } else {
         console.error("Elemento com ID 'atv_gestao_inst_repre' não encontrado!");
@@ -292,7 +302,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (tbody) {
         tbody.innerHTML = ""; 
-
+        var i = 0;
         for (let chave in r.quali_capac) {
             let row = document.createElement("tr"); 
 
@@ -308,6 +318,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let input = document.createElement("input");
             input.type = "number";
             input.min = "0";
+            input.id = "atv_quali_cap_" + i;
             input.value = r.quali_capac[chave];
             input.classList.add("form-control", "ch_quali_cap");
 
@@ -316,6 +327,7 @@ document.addEventListener("DOMContentLoaded", () => {
             row.appendChild(colPid);
             row.appendChild(colInput);
             tbody.appendChild(row); 
+            i++;
         }
     } else {
         console.error("Elemento com ID 'atv_quali_cap' não encontrado!");
