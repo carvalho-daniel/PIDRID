@@ -24,5 +24,9 @@
 
 #### 1. Realizar corretamente os comandos de instalação do projeto:
     Passo: Dowload de Requisitos do Projeto
-
-#### 2. 
+    npm install --save-dev jest
+#### 2. Para rodar os testes é necessario:
+##### Rodar todos os testes:
+    npm test
+##### Rodar apenas o teste escolhido
+    npx jest __tests__/(Nome do arquivo).test.js --verbose
