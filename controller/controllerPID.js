@@ -8,6 +8,7 @@ exports.lista = async function(req, res) {
 exports.include = async function(req, res) {
     // 5, 7, 7, 26, 20, 12, 5
     var idProf = req.params.idProf;
+    console.log(idProf)
 
     var prep_manu_ensino = [
         req.body.atv_prep_manu_1,
