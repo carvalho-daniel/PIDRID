@@ -150,3 +150,14 @@ CREATE TABLE IF NOT EXISTS atv_quali_cap (
     id_professor INT,
     FOREIGN KEY (id_professor) REFERENCES professor(id)
 );
+
+CREATE DEFINER=`root`@`localhost` TRIGGER `professor_AFTER_INSERT` AFTER INSERT ON `professor` FOR EACH ROW BEGIN
+	set @id_prof = (select max(id) from professor);
+	insert into atv_quali_cap (id_professor) values (@id_prof);
+    insert into atv_prep_manu (id_professor) values (@id_prof);
+    insert into atv_pesq_ino (id_professor) values (@id_prof);
+    insert into atv_orientacao (id_professor) values (@id_prof);
+    insert into atv_gestao_inst_repre (id_professor) values (@id_prof);
+    insert into atv_extensao (id_professor) values (@id_prof);
+    insert into atv_apoio_ensino (id_professor) values (@id_prof);
+END

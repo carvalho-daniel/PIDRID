@@ -1,59 +1,84 @@
-const controllerDocente = require('../controller/controllerDocente');
+const docenteController = require('../controller/controllerDocente.js'); // ajuste o caminho
+const db = require('../database.js');
+
+// Mock das funções do banco
+jest.mock('../database', () => ({
+    includeProfessor: jest.fn(),
+    login: jest.fn(),
+    getProfessores: jest.fn()
+}));
 
 describe('Controller Docente', () => {
-    it('Deve retornar uma lista de docentes', async () => {
-        const response = await controllerDocente.listarDocentes();
-        expect(Array.isArray(response)).toBe(true);
+
+    let req, res;
+
+    beforeEach(() => {
+        req = {
+            body: {},
+            params: {}
+        };
+
+        res = {
+            render: jest.fn(),
+            redirect: jest.fn()
+        };
     });
 
-    it('Deve adicionar um docente corretamente', async () => {
-        const novoDocente = { nome: "Dr. Strange", departamento: "Mágica" };
-        const response = await controllerDocente.adicionarDocente(novoDocente);
-        expect(response).toHaveProperty('id');
-        expect(response.nome).toBe("Dr. Strange");
+    // ---------- Teste da função incluir ----------
+    test('Deve incluir um professor e redirecionar para "/"', async () => {
+        req.body = {
+            nome: "João",
+            email: "joao@email.com",
+            password: "senha123",
+            telefone: "123456789",
+            siape: "987654",
+            cargaH: "40"
+        };
+
+        await docenteController.incluir(req, res);
+
+        expect(db.includeProfessor).toHaveBeenCalledWith(
+            "João", "joao@email.com", "senha123", "123456789", "987654", "40"
+        );
+
+        expect(res.redirect).toHaveBeenCalledWith('/');
     });
 
-    it('Deve lançar erro ao tentar adicionar um docente sem nome', async () => {
-        const novoDocente = { nome: "", departamento: "Ciência" };
-        await expect(controllerDocente.adicionarDocente(novoDocente)).rejects.toThrow();
+    // ---------- Teste da função entrar (login bem-sucedido) ----------
+    test('Deve fazer login com sucesso e renderizar pidProf', async () => {
+        req.body = {
+            email: "joao@email.com",
+            password: "senha123"
+        };
+
+        db.login.mockResolvedValue({ id: 1 });
+
+        await docenteController.entrar(req, res);
+
+        expect(db.login).toHaveBeenCalledWith("joao@email.com", "senha123");
+        expect(res.render).toHaveBeenCalledWith("pidProf", { id: 1 });
     });
 
-    it('Deve lançar erro ao tentar adicionar um docente sem departamento', async () => {
-        const novoDocente = { nome: "Dr. House", departamento: "" };
-        await expect(controllerDocente.adicionarDocente(novoDocente)).rejects.toThrow();
+    // ---------- Teste da função entrar (falha no login) ----------
+    test('Deve falhar no login e renderizar index com nLogou true', async () => {
+        req.body = {
+            email: "joao@email.com",
+            password: "senha123"
+        };
+
+        db.login.mockResolvedValue(undefined);
+
+        await docenteController.entrar(req, res);
+
+        expect(db.login).toHaveBeenCalledWith("joao@email.com", "senha123");
+        expect(res.render).toHaveBeenCalledWith("index", { nLogou: true });
     });
 
-    it('Deve retornar um docente pelo ID', async () => {
-        const novoDocente = { nome: "Dr. Who", departamento: "Tempo" };
-        const docenteAdicionado = await controllerDocente.adicionarDocente(novoDocente);
-        const response = await controllerDocente.buscarDocente(docenteAdicionado.id);
-        expect(response).toHaveProperty('id');
-        expect(response.nome).toBe("Dr. Who");
+    // ---------- Teste da função perfil ----------
+    test('Deve renderizar a página dadosProf com contexto vazio', async () => {
+        await docenteController.perfil(req, res);
+
+        expect(res.render).toHaveBeenCalledWith("dadosProf", {});
     });
 
-    it('Deve lançar erro ao tentar buscar um docente com ID inexistente', async () => {
-        await expect(controllerDocente.buscarDocente(9999)).rejects.toThrow();
-    });
-
-    it('Deve atualizar um docente corretamente', async () => {
-        const novoDocente = { nome: "Dr. Evil", departamento: "Maldade" };
-        const docenteAdicionado = await controllerDocente.adicionarDocente(novoDocente);
-        const docenteAtualizado = { id: docenteAdicionado.id, nome: "Dr. Good", departamento: "Bondade" };
-        const response = await controllerDocente.atualizarDocente(docenteAtualizado);
-        expect(response.nome).toBe("Dr. Good");
-        expect(response.departamento).toBe("Bondade");
-    });
-
-    it('Deve lançar erro ao tentar atualizar um docente com ID inexistente', async () => {
-        const docenteAtualizado = { id: 9999, nome: "Dr. Good", departamento: "Bondade" };
-        await expect(controllerDocente.atualizarDocente(docenteAtualizado)).rejects.toThrow();
-    });
-
-    it('Deve remover um docente corretamente', async () => {
-        const novoDocente = { nome: "Dr. Doom", departamento: "Destruição" };
-        const docenteAdicionado = await controllerDocente.adicionarDocente(novoDocente);
-        const response = await controllerDocente.remover
-    });
-    
 });
-

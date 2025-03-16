@@ -1,30 +1,95 @@
-const PID = require('../public/model/pid');
+const PID = require('../public/model/pid.js');
+
 
 describe('Classe PID', () => {
     it('Deve criar um objeto PID corretamente', () => {
-        const pid = new PID(101, "Pesquisa de IA", "Ativo");
-        expect(pid.id).toBe(101);
-        expect(pid.titulo).toBe("Pesquisa de IA");
-        expect(pid.status).toBe("Ativo");
+        var pid = new PID(101);
+        expect(pid.idProf).toBe(101);
     });
 
-    it('Deve lançar erro ao criar PID sem título', () => {
-        expect(() => new PID(102, "", "Em andamento")).toThrow();
+    it('Deve lançar erro ao criar PID sem id', () => {
+        expect(() => new PID()).toThrow(Error);
     });
 
-    it('Deve mudar o status do PID', () => {
-        const pid = new PID(103, "Pesquisa Quântica", "Pendente");
-        pid.status = "Finalizado";
-        expect(pid.status).toBe("Finalizado");
+    it('Deve mudar o id do PID', () => {
+        var pid = new PID(101);
+        pid.idProf = 102;
+        expect(pid.idProf).toBe(102);
     });
 
-    it('Deve lançar erro ao criar PID sem status', () => {
-        expect(() => new PID(100, "Pesquisa de Robótica", "")).toThrow();
+    it('Deve atribuir todos as horas certas', ()=> {
+        let vetorTeste = [1, 2, 3, 4, 5];
+        let pid = new PID(1);
+        pid.setChPrepManuEnsino(vetorTeste);
+        // 5, 7, 7, 26, 20, 12, 5
+        
+        // Obtém as chaves do objeto dinamicamente
+        let keys = Object.keys(pid.prep_manu_ensino);
+
+        // Verifica se cada chave recebeu o valor correto em prep_manu_ensino
+        keys.forEach((key, index) => {
+            expect(pid.prep_manu_ensino[key]).toBe(vetorTeste[index]);
+        });
+
+        // Verifica se cada chave recebeu o valor correto em apoio_ensino
+        vetorTeste = [1,2,3,4,5,6,7]
+        keys = Object.keys(pid.apoio_ensino);
+        pid.setChApoioEnsino(vetorTeste);
+        keys.forEach((key, index) => {
+            expect(pid.apoio_ensino[key]).toBe(vetorTeste[index]);
+        });
+
+        // Verifica se cada chave recebeu o valor correto em orientacao
+        keys = Object.keys(pid.orientacao);
+        pid.setOrientacao(vetorTeste);
+        keys.forEach((key, index) => {
+            expect(pid.orientacao[key]).toBe(vetorTeste[index]);
+        });
+
+        // Verifica se cada chave recebeu o valor correto em pesquisa_ino
+        vetorTeste = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26];
+        keys = Object.keys(pid.pesquisa_ino);
+        pid.setPesquisaIno(vetorTeste);
+        keys.forEach((key, index) => {
+            expect(pid.pesquisa_ino[key]).toBe(vetorTeste[index]);
+        });
+
+        // Verifica se cada chave recebeu o valor correto em extensao
+        vetorTeste = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+        keys = Object.keys(pid.extensao);
+        pid.setExtensao(vetorTeste);
+        keys.forEach((key, index) => {
+            expect(pid.extensao[key]).toBe(vetorTeste[index]);
+        });
+
+        // Verifica se cada chave recebeu o valor correto em gestao_inst_repre
+        vetorTeste = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+        keys = Object.keys(pid.gestao_inst_repre);
+        pid.setGestaoInstRepre(vetorTeste);
+        keys.forEach((key, index) => {
+            expect(pid.gestao_inst_repre[key]).toBe(vetorTeste[index]);
+        });
+
+        // Verifica se cada chave recebeu o valor correto em quali_capac
+        vetorTeste = [1, 2, 3, 4, 5];
+        keys = Object.keys(pid.quali_capac);
+        pid.setQualiCapac(vetorTeste);
+        keys.forEach((key, index) => {
+            expect(pid.quali_capac[key]).toBe(vetorTeste[index]);
+        });
+        
+
+        expect(() => pid.setJustificativa([1,2])).toThrow("A justificativa deve ser uma string");
+        expect(() => pid.setJustificativa(1)).toThrow("A justificativa deve ser uma string");
+        expect(() => pid.setJustificativa({})).toThrow("A justificativa deve ser uma string");
     });
 
-    it('Deve atualizar o título do PID', () => {
-        const pid = new PID(104, "Pesquisa Espacial", "Ativo");
-        pid.titulo = "Pesquisa Espacial Avançada";
-        expect(pid.titulo).toBe("Pesquisa Espacial Avançada");
+    it('Deve lançar erro caso não seja um array', () => {
+        var pid = new PID(1);
+        expect(() => pid.setChPrepManuEnsino("string")).toThrow("O parâmetro deve ser um array.");
+        expect(() => pid.setChPrepManuEnsino(123)).toThrow("O parâmetro deve ser um array.");
+        expect(() => pid.setChPrepManuEnsino({})).toThrow("O parâmetro deve ser um array.");
     });
+
+
 });

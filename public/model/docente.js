@@ -7,73 +7,101 @@ class Docente {
     siape;
     efetivo=false;
 
-    constructor(nome, telefone, email,senha, siape, efeitvo=false, departamento="ENSINO") {
-        this.nome = nome;
-        this.telefone = telefone;
-        this.email = email;
-        this.senha = senha;
-        this.siape = siape;
-        this.efetivo = efeitvo;
-        this.departamento = departamento;
+    constructor(nome, telefone, email, senha, siape, efetivo = false, departamento = "ENSINO") {
+        this.setNome(nome);
+        this.setTelefone(telefone);
+        this.setEmail(email);
+        this.setSenha(senha);
+        this.setSiape(siape);
+        this.setEfetivo(efetivo);
+        this.setDepartamento(departamento);
     }
-    
-    get nome() {
+
+    getNome() {
         return this._nome;
     }
     
-    set nome(nome) {
+    setNome(nome) {
+        if(nome == undefined)
+            throw new Error("Nome não pode ser vazio");
+        if(typeof nome != "string")
+            throw new Error("Nome deve ser string");
+
         this._nome = nome;
     }
 
-    get departamento() {
+    getDepartamento() {
         return this._departamento;
     }
     
-    set departamento(departamento) {
+    setDepartamento(departamento) {
+        if(departamento == undefined)
+            throw new Error("Departamento não pode ser vazio");
+        if(typeof departamento != "string")
+            throw new Error("Departamento deve ser string");
         this._departamento = departamento;
     }
 
-    get telefone() {
+    getTelefone() {
         return this._telefone;
     }
     
-    set telefone(telefone) {
+    setTelefone(telefone) {
+        if(telefone == undefined)
+            throw new Error("Telefone não pode ser vazio");
+        if(typeof telefone != "string")
+            throw new Error("Telefone deve ser string");
         this._telefone = telefone;
     }
 
-    get email() {
+    getEmail() {
         return this._email;
     }
     
-    set email(email) {
+    setEmail(email) {
+        if(email == undefined)
+            throw new Error("Email não pode ser vazio");
+        if(typeof email != "string")
+            throw new Error("Email deve ser string");
         this._email = email;
     }
 
-    get senha(){
+    getSenha(){
         return this._senha;
     }
 
-    set senha(senha){
+    setSenha(senha){
+        if(senha == undefined)
+            throw new Error("Senha não pode ser vazia");
+        if(typeof senha != "string")
+            throw new Error("Senha deve ser string");
         this._senha = senha;
     }
 
-    get siape() {
+    getSiape() {
         return this._siape;
     }
     
-    set siape(siape) {
+    setSiape(siape) {
+        if(siape == undefined)
+            throw new Error("Siape não pode ser vazia");
+        if(typeof siape != "string")
+            throw new Error("Siape deve ser string");
         this._siape = siape;
     }
 
-    get efetivo() {
+    getEfetivo() {
         return this._efetivo;
     }
     
-    set efetivo(efetivo) {
+    setEfetivo(efetivo) {
+        if(efetivo == undefined)
+            throw new Error("Efeitvo não pode ser vazio");
+        if(typeof efetivo != "boolean")
+            throw new Error("Siape deve ser boolean");
         this._efetivo = efetivo;
     }
 
 }
 
-var doc =  new Docente();
-module.exports = doc;
+module.exports = Docente;

@@ -1,4 +1,5 @@
 class Rid {
+    idProf
     prep_manu_ensino = {}
     apoio_ensino = {}
     orientacao = {}
@@ -8,7 +9,10 @@ class Rid {
     quali_capac = {}
     justificativa = ""
 
-    constructor() {
+    constructor(idProf) {
+        if(idProf == undefined)
+            throw new Error("Sem id");
+        this.idProf = idProf;
         // atividades de preparação de manutenção do ensino
         this.prep_manu_ensino["Estudo, Planejamento e Elaboração de Materiais e Práticas Pedagógicas"] = 0
         this.prep_manu_ensino["Preparação de Aulas Teóricas e Práticas"] = 0
@@ -107,11 +111,125 @@ class Rid {
 
     }
 
-    setChPrepManuEnsino([]) {
-        for(var i = 0; i < this.prep_manu_ensino.length; i++) {
-            this.prep_manu_ensino[i] = [i];
+    setChPrepManuEnsino(vetor) {
+        if (!Array.isArray(vetor)) {
+            throw new Error("O parâmetro deve ser um array.");
+            return;
         }
-        
+    
+        let keys = Object.keys(this.prep_manu_ensino);
+    
+        if (vetor.length !== keys.length) {
+            console.error("O número de valores não corresponde ao número de chaves.");
+            return;
+        }
+    
+        keys.forEach((key, index) => {
+            this.prep_manu_ensino[key] = vetor[index];
+        });
+    }
+
+    setChApoioEnsino(vetor) {
+        if (!Array.isArray(vetor)) {
+            throw new Error("O parâmetro deve ser um array.");
+        }
+    
+        let keys = Object.keys(this.apoio_ensino);
+    
+        if (vetor.length !== keys.length) {
+            throw new Error("O número de valores não corresponde ao número de chaves.");
+        }
+    
+        keys.forEach((key, index) => {
+            this.apoio_ensino[key] = vetor[index];
+        });
+    }
+
+    setOrientacao(vetor) {
+        if (!Array.isArray(vetor)) {
+            throw new Error("O parâmetro deve ser um array.");
+        }
+    
+        let keys = Object.keys(this.orientacao);
+    
+        if (vetor.length !== keys.length) {
+            throw new Error("O número de valores não corresponde ao número de chaves.");
+        }
+    
+        keys.forEach((key, index) => {
+            this.orientacao[key] = vetor[index];
+        });
+    }
+
+    setPesquisaIno(vetor) {
+        if (!Array.isArray(vetor)) {
+            throw new Error("O parâmetro deve ser um array.");
+        }
+    
+        let keys = Object.keys(this.pesquisa_ino);
+    
+        if (vetor.length !== keys.length) {
+            throw new Error("O número de valores não corresponde ao número de chaves.");
+        }
+    
+        keys.forEach((key, index) => {
+            this.pesquisa_ino[key] = vetor[index];
+        });
+    }
+
+    setExtensao(vetor) {
+        if (!Array.isArray(vetor)) {
+            throw new Error("O parâmetro deve ser um array.");
+        }
+    
+        let keys = Object.keys(this.extensao);
+    
+        if (vetor.length !== keys.length) {
+            throw new Error("O número de valores não corresponde ao número de chaves.");
+        }
+    
+        keys.forEach((key, index) => {
+            this.extensao[key] = vetor[index];
+        });
+    }
+
+    setGestaoInstRepre(vetor) {
+        if (!Array.isArray(vetor)) {
+            throw new Error("O parâmetro deve ser um array.");
+        }
+    
+        let keys = Object.keys(this.gestao_inst_repre);
+    
+        if (vetor.length !== keys.length) {
+            throw new Error("O número de valores não corresponde ao número de chaves.");
+        }
+    
+        keys.forEach((key, index) => {
+            this.gestao_inst_repre[key] = vetor[index];
+        });
+    }
+
+    setQualiCapac(vetor) {
+        if (!Array.isArray(vetor)) {
+            throw new Error("O parâmetro deve ser um array.");
+        }
+    
+        let keys = Object.keys(this.quali_capac);
+    
+        if (vetor.length !== keys.length) {
+            throw new Error("O número de valores não corresponde ao número de chaves.");
+        }
+    
+        keys.forEach((key, index) => {
+            this.quali_capac[key] = vetor[index];
+        });
+    }
+
+    setJustificativa(just) {
+        if(typeof just != "string")
+            throw new Error("A justificativa deve ser uma string");
+
+        this.justificativa = just;
     }
 
     getChPrepManuEnsino() { return this.prep_manu_ensino; }
@@ -126,4 +244,4 @@ class Rid {
 }
 
 
-export default Rid;
+module.exports = Rid;

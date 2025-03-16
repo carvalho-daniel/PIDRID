@@ -1,19 +1,27 @@
 const controllerIndex = require('../controller/controllerIndex');
 
-describe('Controller Index', () => {
-    it('Deve retornar status 200 na home', async () => {
-        const response = await controllerIndex.getHome();
-        expect(response.status).toBe(200);
+describe('controllerIndex', () => {
+    let req, res;
+
+    beforeEach(() => {
+        req = {};
+        res = { render: jest.fn() };
     });
 
-    it('Deve retornar erro ao acessar rota inexistente', async () => {
-        await expect(controllerIndex.getPageNotFound()).rejects.toThrow();
+    test('tela_principal deve renderizar index com contexto', async () => {
+        await controllerIndex.tela_principal(req, res);
+
+        expect(res.render).toHaveBeenCalledWith("index", {
+            titulo_pagina: "Principal"
+        });
     });
 
-    it('Deve retornar status 200 na pagina de login', async () => {
-        const response = await controllerIndex.getLogin();
-        expect(response.status).toBe(200);
+    test('lista deve renderizar pidProf', async () => {
+        console.log = jest.fn(); // evita poluir testes
+
+        await controllerIndex.lista(req, res);
+
+        expect(console.log).toHaveBeenCalledWith("tem que passar por aqui");
+        expect(res.render).toHaveBeenCalledWith("pidProf");
     });
-
-
 });

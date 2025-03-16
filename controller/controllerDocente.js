@@ -39,6 +39,7 @@ exports.entrar = async function(req, res) {
         contexto = {
             nLogou: true
         }
+        // localStorage.setItem("id_professor", rows[0])
         res.render("index", contexto)
     } else {
         contexto = {
