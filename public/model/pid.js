@@ -1,4 +1,4 @@
-export default class pid {
+module.exports = class pid {
     idProf;
     prep_manu_ensino = [] // 5
     apoio_ensino = [] // 7

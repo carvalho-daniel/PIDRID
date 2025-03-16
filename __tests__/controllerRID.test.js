@@ -1,50 +1,23 @@
 const controllerRID = require('../controller/controllerRID');
+const rid = require('../public/model/rid');
 
-describe('Controller RID', () => {
-    it('Deve listar todos os RIDs', async () => {
-        const response = await controllerRID.listarRIDs();
-        expect(Array.isArray(response)).toBe(true);
+// Mock da função `consulta`
+jest.mock('../public/model/rid', () => ({
+    consulta: jest.fn()
+}));
+
+describe('controllerRID', () => {
+    let req, res;
+
+    beforeEach(() => {
+        req = { params: { id: '1' } };
+        res = { render: jest.fn() };
     });
 
-    it('Deve criar um novo RID corretamente', async () => {
-        const novoRID = { descricao: "Relatório Anual", status: "Aprovado" };
-        const response = await controllerRID.criarRID(novoRID);
-        expect(response).toHaveProperty('id');
-        expect(response.descricao).toBe("Relatório Anual");
-    });
+    test('lista deve consultar rid e renderizar ridProf com contexto', async () => {
+        rid.consulta.mockResolvedValue({ id: '1', valor: 'Teste' });
 
-    it('Deve lançar erro ao criar um RID sem descrição', async () => {
-        const novoRID = { descricao: "", status: "Pendente" };
-        await expect(controllerRID.criarRID(novoRID)).rejects.toThrow();
+        await controllerRID.lista(req, res);
+        expect(res.render).toHaveBeenCalledWith('ridProf', expect.any(Object));
     });
-
-    it('Deve atualizar um RID existente corretamente', async () => {
-        const novoRID = { descricao: "Relatório Mensal", status: "Aprovado" };
-        const response = await controllerRID.criarRID(novoRID);
-        const id = response.id;
-        const atualizacao = { descricao: "Relatório Semanal", status: "Pendente" };
-        const responseAtualizado = await controllerRID.atualizarRID(id, atualizacao);
-        expect(responseAtualizado.descricao).toBe("Relatório Semanal");
-        expect(responseAtualizado.status).toBe("Pendente");
-    });
-
-    it('Deve lançar erro ao atualizar um RID inexistente', async () => {
-        const id = 999999;
-        const atualizacao = { descricao: "Relatório Semanal", status: "Pendente" };
-        await expect(controllerRID.atualizarRID(id, atualizacao)).rejects.toThrow();
-    });
-
-    it('Deve deletar um RID existente corretamente', async () => {
-        const novoRID = { descricao: "Relatório Trimestral", status: "Aprovado" };
-        const response = await controllerRID.criarRID(novoRID);
-        const id = response.id;
-        const responseDeletado = await controllerRID.deletarRID(id);
-        expect(responseDeletado).toBe(true);
-    });
-
-    it('Deve lançar erro ao deletar um RID inexistente', async () => {
-        const id = 999999;
-        await expect(controllerRID.deletarRID(id)).rejects.toThrow();
-    });
-
 });

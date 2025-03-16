@@ -31,8 +31,6 @@ exports.entrar = async function(req, res) {
 
     var rows = await login(email, senha);
 
-    console.log(rows);
-
     var contexto;
 
     if(rows == undefined) {
