@@ -1,6 +1,3 @@
-// import mysql from 'mysql2'
-// import dotenv from 'dotenv'
-
 var mysql = require('mysql2')
 var dotenv = require('dotenv');
 
@@ -36,6 +33,19 @@ async function login(email, senha) {
         select id from professor where email = ? and senha = md5(?);   
     `, [email, senha]);
     return rows[0];
+}
+
+async function includePid(idProf, prep_manu_ensino, apoio_ensino, orientacao, pesquisa_ino, extensao, gestao_inst_repre, quali_capac, justificativa="") {
+    await pool.query(`
+        include into atv_prep_manu
+        (   atv_prep_manu_1,
+            atv_prep_manu_2,
+            atv_prep_manu_3,
+            atv_prep_manu_4,
+            atv_prep_manu_5
+        )
+        values (?, ?, ?, ?, ?) where id_professor = ?
+    `, [prep_manu_ensino[0], prep_manu_ensino[1], prep_manu_ensino[2], prep_manu_ensino[3], prep_manu_ensino[4], idProf]);
 }
 
 module.exports = {

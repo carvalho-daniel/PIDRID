@@ -1,17 +1,19 @@
-class pid {
+export default class pid {
     idProf;
-    prep_manu_ensino = []
-    apoio_ensino = []
-    orientacao = []
-    pesquisa_ino = []
-    extensao = []
-    gestao_inst_repre = []
-    quali_capac = []
+    prep_manu_ensino = [] // 5
+    apoio_ensino = [] // 7
+    orientacao = [] // 7
+    pesquisa_ino = [] // 26
+    extensao = [] // 20
+    gestao_inst_repre = [] // 12
+    quali_capac = [] // 5
     justificativa = ""
 
     constructor(idProf) {
         if(idProf == undefined)
             throw new Error("Sem id");
+        if(typeof idProf != "number")
+            throw new Error("O id do professor deve ser um número")
         this.idProf = idProf;
         
         // atividades de preparação de manutenção do ensino
@@ -243,5 +245,3 @@ class pid {
     getJustificativa() { return this.justificativa; }
 
 }
-
-module.exports = pid;

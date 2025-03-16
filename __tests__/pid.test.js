@@ -91,5 +91,42 @@ describe('Classe PID', () => {
         expect(() => pid.setChPrepManuEnsino({})).toThrow("O parâmetro deve ser um array.");
     });
 
+    it('Os valores devem ser 0 por padrão', ()=>{
+        var pid = new PID(1);
+        
+        let keys = Object.keys(pid.prep_manu_ensino);
+        keys.forEach((key) => {
+            expect(pid.prep_manu_ensino[key]).toBe(0);
+        });
 
+        keys = Object.keys(pid.apoio_ensino);
+        keys.forEach((key) => {
+            expect(pid.apoio_ensino[key]).toBe(0);
+        });
+
+        keys = Object.keys(pid.orientacao);
+        keys.forEach((key) => {
+            expect(pid.orientacao[key]).toBe(0);
+        });
+
+        keys = Object.keys(pid.pesquisa_ino);
+        keys.forEach((key) => {
+            expect(pid.pesquisa_ino[key]).toBe(0);
+        });
+
+        keys = Object.keys(pid.extensao);
+        keys.forEach((key) => {
+            expect(pid.extensao[key]).toBe(0);
+        });
+
+        keys = Object.keys(pid.gestao_inst_repre);
+        keys.forEach((key) => {
+            expect(pid.gestao_inst_repre[key]).toBe(0);
+        });
+
+        keys = Object.keys(pid.quali_capac);
+        keys.forEach((key) => {
+            expect(pid.quali_capac[key]).toBe(0);
+        });
+    });
 });

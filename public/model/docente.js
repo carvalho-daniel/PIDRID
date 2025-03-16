@@ -98,7 +98,7 @@ class Docente {
         if(efetivo == undefined)
             throw new Error("Efeitvo não pode ser vazio");
         if(typeof efetivo != "boolean")
-            throw new Error("Siape deve ser boolean");
+            throw new Error("Efetivo deve ser boolean");
         this._efetivo = efetivo;
     }
 

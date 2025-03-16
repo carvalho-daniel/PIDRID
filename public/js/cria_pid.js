@@ -1,8 +1,8 @@
-const pid = require('../model/pid.js');
+import PID from '../model/pid.js';
 
 // atividades de preparação e manutenção do ensino
 document.addEventListener("DOMContentLoaded", () => {
-    let p = new pid(1);
+    let p = new PID(1);
     let tbody = document.getElementById("atv_prep_manu");
 
     if (tbody) {
@@ -48,7 +48,7 @@ function chTotalPrepManu() {
 
 // atividades de apoio ao ensino
 document.addEventListener("DOMContentLoaded", () => {
-    let p = new pid(1);
+    let p = new PID(1);
     let tbody = document.getElementById("atv_apoio_ensino");
 
     if (tbody) {
@@ -93,7 +93,7 @@ function chTotalApoioEnsino() {
 
 // atividades de orientação
 document.addEventListener("DOMContentLoaded", () => {
-    let p = new pid(1);
+    let p = new PID(1);
     let tbody = document.getElementById("atv_orientacao");
 
     if (tbody) {
@@ -138,7 +138,7 @@ function chTotalOrientacao() {
 
 // atividades de pesquisa e inovação
 document.addEventListener("DOMContentLoaded", () => {
-    let p = new pid(1);
+    let p = new PID(1);
     let tbody = document.getElementById("atv_pesq_ino");
 
     if (tbody) {
@@ -183,7 +183,7 @@ function chTotalPesquisa() {
 
 // atividades de extensão
 document.addEventListener("DOMContentLoaded", () => {
-    let p = new pid(1);
+    let p = new PID(1);
     let tbody = document.getElementById("atv_extensao");
 
     if (tbody) {
@@ -228,7 +228,7 @@ function chTotalExtensao() {
 
 // atividades de gestão institucional e representações
 document.addEventListener("DOMContentLoaded", () => {
-    let p = new pid(1);
+    let p = new PID(1);
     let tbody = document.getElementById("atv_gestao_inst_repre");
 
     if (tbody) {
@@ -273,7 +273,7 @@ function chTotalGestaoInstRepre() {
 
 // atividades de qualificação e capacitação
 document.addEventListener("DOMContentLoaded", () => {
-    let p = new pid(1);
+    let p = new PID(1);
     let tbody = document.getElementById("atv_quali_cap");
 
     if (tbody) {

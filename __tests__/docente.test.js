@@ -27,4 +27,20 @@ describe('Classe Docente', () => {
         docente.setDepartamento("Engenharia");
         expect(docente.getDepartamento()).toBe("Engenharia");
     });
+
+    it('Deve ter por padrão o efetivo: false e o departamento: ensino', () => {
+        const docente = new Docente("Charles Xavier", "12341234", "xman@mutante.com", "123456", "1234567");
+        expect(docente.getDepartamento()).toBe("ENSINO");
+        expect(docente.getEfetivo()).toBe(false);
+    });
+
+    it('Deve lançar erro caso o efeitvo não seja booleano ou vazio', () => {
+        const docente = new Docente("Charles Xavier", "12341234", "xman@mutante.com", "123456", "1234567");
+        expect(() => docente.setEfetivo()).toThrow("Efeitvo não pode ser vazio")
+        expect(() => docente.setEfetivo(12)).toThrow("Efetivo deve ser boolean")
+        expect(() => docente.setEfetivo(12.2)).toThrow("Efetivo deve ser boolean")
+        expect(() => docente.setEfetivo([])).toThrow("Efetivo deve ser boolean")
+        expect(() => docente.setEfetivo({})).toThrow("Efetivo deve ser boolean")
+        
+    });
 });
