@@ -22,7 +22,7 @@ class Docente {
     }
     
     setNome(nome) {
-        if(nome == undefined)
+        if(nome == undefined || nome == null || nome == "")
             throw new Error("Nome não pode ser vazio");
         if(typeof nome != "string")
             throw new Error("Nome deve ser string");
@@ -35,7 +35,7 @@ class Docente {
     }
     
     setDepartamento(departamento) {
-        if(departamento == undefined)
+        if(departamento == undefined || departamento == null || departamento == "")
             throw new Error("Departamento não pode ser vazio");
         if(typeof departamento != "string")
             throw new Error("Departamento deve ser string");
@@ -47,7 +47,7 @@ class Docente {
     }
     
     setTelefone(telefone) {
-        if(telefone == undefined)
+        if(telefone == undefined || telefone == null || telefone == "")
             throw new Error("Telefone não pode ser vazio");
         if(typeof telefone != "string")
             throw new Error("Telefone deve ser string");
@@ -59,7 +59,7 @@ class Docente {
     }
     
     setEmail(email) {
-        if(email == undefined)
+        if(email == undefined || email == null || email == "")
             throw new Error("Email não pode ser vazio");
         if(typeof email != "string")
             throw new Error("Email deve ser string");
@@ -71,7 +71,7 @@ class Docente {
     }
 
     setSenha(senha){
-        if(senha == undefined)
+        if(senha == undefined || senha == null || senha == "")
             throw new Error("Senha não pode ser vazia");
         if(typeof senha != "string")
             throw new Error("Senha deve ser string");
@@ -83,8 +83,8 @@ class Docente {
     }
     
     setSiape(siape) {
-        if(siape == undefined)
-            throw new Error("Siape não pode ser vazia");
+        if(siape == undefined || siape == null || siape == "")
+            throw new Error("Siape não pode ser vazio");
         if(typeof siape != "string")
             throw new Error("Siape deve ser string");
         this._siape = siape;
@@ -96,7 +96,7 @@ class Docente {
     
     setEfetivo(efetivo) {
         if(efetivo == undefined)
-            throw new Error("Efeitvo não pode ser vazio");
+            throw new Error("Efetivo não pode ser vazio");
         if(typeof efetivo != "boolean")
             throw new Error("Efetivo deve ser boolean");
         this._efetivo = efetivo;

@@ -1,17 +1,19 @@
 class Rid {
     idProf
-    prep_manu_ensino = {}
-    apoio_ensino = {}
-    orientacao = {}
-    pesquisa_ino = {}
-    extensao = {}
-    gestao_inst_repre = {}
-    quali_capac = {}
+    prep_manu_ensino = []
+    apoio_ensino = []
+    orientacao = []
+    pesquisa_ino = []
+    extensao = []
+    gestao_inst_repre = []
+    quali_capac = []
     justificativa = ""
 
     constructor(idProf) {
         if(idProf == undefined)
             throw new Error("Sem id");
+        if(typeof idProf != "number")
+            throw new Error("O id do professor deve ser um número")
         this.idProf = idProf;
         // atividades de preparação de manutenção do ensino
         this.prep_manu_ensino["Estudo, Planejamento e Elaboração de Materiais e Práticas Pedagógicas"] = 0
@@ -114,14 +116,13 @@ class Rid {
     setChPrepManuEnsino(vetor) {
         if (!Array.isArray(vetor)) {
             throw new Error("O parâmetro deve ser um array.");
-            return;
+           
         }
     
         let keys = Object.keys(this.prep_manu_ensino);
     
         if (vetor.length !== keys.length) {
-            console.error("O número de valores não corresponde ao número de chaves.");
-            return;
+            throw new Error("O número de valores não corresponde ao número de chaves.");
         }
     
         keys.forEach((key, index) => {

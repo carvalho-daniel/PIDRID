@@ -1,0 +1,826 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for public/model/rid.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">public/model</a> rid.js</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">94.23% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>147/156</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">97.05% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>33/34</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">66.66% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>16/24</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">94.23% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>147/156</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a>
+<a name='L225'></a><a href='#L225'>225</a>
+<a name='L226'></a><a href='#L226'>226</a>
+<a name='L227'></a><a href='#L227'>227</a>
+<a name='L228'></a><a href='#L228'>228</a>
+<a name='L229'></a><a href='#L229'>229</a>
+<a name='L230'></a><a href='#L230'>230</a>
+<a name='L231'></a><a href='#L231'>231</a>
+<a name='L232'></a><a href='#L232'>232</a>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a>
+<a name='L235'></a><a href='#L235'>235</a>
+<a name='L236'></a><a href='#L236'>236</a>
+<a name='L237'></a><a href='#L237'>237</a>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a>
+<a name='L245'></a><a href='#L245'>245</a>
+<a name='L246'></a><a href='#L246'>246</a>
+<a name='L247'></a><a href='#L247'>247</a>
+<a name='L248'></a><a href='#L248'>248</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">class Rid {
+    idProf
+    prep_manu_ensino = []
+    apoio_ensino = []
+    orientacao = []
+    pesquisa_ino = []
+    extensao = []
+    gestao_inst_repre = []
+    quali_capac = []
+    justificativa = ""
+&nbsp;
+    constructor(idProf) {
+        if(idProf == undefined)
+            throw new Error("Sem id");
+        if(typeof idProf != "number")
+            throw new Error("O id do professor deve ser um número")
+        this.idProf = idProf;
+        // atividades de preparação de manutenção do ensino
+        this.prep_manu_ensino["Estudo, Planejamento e Elaboração de Materiais e Práticas Pedagógicas"] = 0
+        this.prep_manu_ensino["Preparação de Aulas Teóricas e Práticas"] = 0
+        this.prep_manu_ensino["Organização de Material Pedagógico"] = 0
+        this.prep_manu_ensino["Produção e Correção dos Instrumentos de Avaliação"] = 0
+        this.prep_manu_ensino["Registro de Atividades Acadêmicas"] = 0
+&nbsp;
+        // atividades de apoio ao ensino
+        this.apoio_ensino["Atendimento de Alunos Extraclasse (física ou virtual)"] = 0
+        this.apoio_ensino["Reuniões Pedagógicas, Conselhos de Classe e/ou Reuniões de Pais"] = 0
+        this.apoio_ensino["Participação Banca de Trabalho de Conclusão de Curso"] = 0
+        this.apoio_ensino["Atendimento de Alunos em Regime de Exercício Domiciliar"] = 0
+        this.apoio_ensino["Orientação em Olímpiadas do Conhecimento e/ou Competições Diversas"] = 0
+        this.apoio_ensino["Organização, Coordenação e/ou Acompanhamento de Visitas Técnicas"] = 0
+        this.apoio_ensino["Nivelamento sem Constituição de Turma"] = 0
+&nbsp;
+        // atividades de orientação 
+        this.orientacao["Orientação de Estágio "] = 0
+        this.orientacao["Coordenação e Participação como Colaborador em Projeto de Ensino"] = 0
+        this.orientacao["Orientação Acadêmica"] = 0
+        this.orientacao["Orientação em Monitorias de Ensino e Iniciação à Docência"] = 0
+        this.orientacao["Orientação de Trabalhos de Conclusão de Curso"] = 0
+        this.orientacao["Orientação ou Coorientação de Mestrado ou Doutorado"] = 0
+        this.orientacao["Participação na Elaboração e Revisão de Projetos Pedagógicos de Cursos "] = 0
+&nbsp;
+        // atividades de pesquisa e inovação
+        this.pesquisa_ino["Coordenação e Participação como colaborador em Projeto de Pesquisa"] = 0        
+        this.pesquisa_ino["Orientação de Aluno de Iniciação à Pesquisa Científica e/ou Tecnológica"] = 0        
+        this.pesquisa_ino["Coordenação e/ou Participação de Grupo de Pesquisa Cadastrado no CNPq"] = 0        
+        this.pesquisa_ino["Participação de Banca Examinadora de Tese de Doutorado e/ou Dissertação de Mestrado e/ou Monografia de Especialização"] = 0        
+        this.pesquisa_ino["Participação de Banca Examinadora de Monografica de Graduação e/ou Trabalho de Conclusão de Curso de Graduação ou de Curso Técnico"] = 0        
+        this.pesquisa_ino["Participação de Banca Examinadora de Qualificação de Mestrado ou Douturado "] = 0        
+        this.pesquisa_ino["Preparação de Artigo Técnico-Científico a ser publicado em anais de Eventos Acadêmico-Científicos Locais, Regionais, Nacionais ou Internacionais "] = 0        
+        this.pesquisa_ino["Preparação de Artigo Técnico-Científico a ser publicado em periódico de circulação local ou nacional "] = 0  
+        this.pesquisa_ino["Preparação de Artigo Técnico-Científico a ser publicado em periódico indexado nacional ou internacional "] = 0      
+        this.pesquisa_ino["Preparação de Livro ou de Capítulo de Livro Didático, Cultural ou Técnico; Produção de Relatório Técnico, Maniual Técnico e/ou Didático com ISBN "] = 0        
+        this.pesquisa_ino["Editoração de Revistas Científicas Locais, Regionais, Nacionais ou Internacionais "] = 0        
+        this.pesquisa_ino["Editoração, Organização e/ou Tradução de Livros e/ou Periódicos Acadêmicos, Científicos ou Técnicos"] = 0        
+        this.pesquisa_ino["Participação em Conselho Editoral Local, Regional, Nacional ou Internacional "] = 0        
+        this.pesquisa_ino["Participação, como editor, membro de conselho e/ou parecerista de Publicações Acadêmico Científicas"] = 0        
+        this.pesquisa_ino["Tradução de Artigo Didático, Cultural, Artístico ou Técnico"] = 0        
+        this.pesquisa_ino["Participação em Banco de Avaliadores de Pesquisa, Comitê ou Comissão Científica"] = 0        
+        this.pesquisa_ino["Consultor ad hoc na Análise de Projetos, em Seleção de Editais"] = 0        
+        this.pesquisa_ino["Consultor ad hoc, na Condição de Convidado, em Eventos Acadêmicos"] = 0        
+        this.pesquisa_ino["Coordenação ou Participação em Comissão Organizadora de Oficinas, Seminários e outros Eventos Científicos, Locais, Regionais, Nacionais ou Internacional "] = 0        
+        this.pesquisa_ino["Participação como Conferencista Convidado em Eventos Científicos, Locais, Regionais, Nacionais ou Internacionais"] = 0        
+        this.pesquisa_ino["Participação em Eventos Acadêmicos-Científicos Locais, Regionais, Nacionais e Internacionais"] = 0        
+        this.pesquisa_ino["Participação em Visita ou Missão Internacional, Devidamente autorizada pela Instituição para Desenvolver Atividades Acadêmicas "] = 0        
+        this.pesquisa_ino["Desenvolvimento e Registro de propriedades Imtelectuais ou Inovação Tecnológica Cadastradas no NITTEC, tais como Elaboração, Submissão e Registro de Patentes, Registro de Software, Desenho Industrial ou Projeto Piloto, Entre Outras"] = 0        
+        this.pesquisa_ino["Desenvolvimento de Aplicativos Computacionais, Registrados ou Publicados em Livros ou Revistas Indexadas"] = 0        
+        this.pesquisa_ino["Organização e/ou Coordenação de Pesquisa de Campo Institucional "] = 0        
+        this.pesquisa_ino["Coordenação de Institutos nacionais de Ciência e Tecnologia e Inovação Externos"] = 0      
+&nbsp;
+        // atividades de extensão
+        this.extensao["Coordenação e Participação como Colaborador em Programas e Projetos de Extensão"] = 0 
+        this.extensao["Coordenação de Cursos e Eventos de Extensão "] = 0 
+        this.extensao["Publicação de Pôsters, Resumos e/ou artigos Resultantes de Projetos de Extensão, em Periódicos de Extensão "] = 0 
+        this.extensao["Prestação de Serviços: Conjunto de Ações, tais como Consultorias, Laudos Técnicos e Assessorias, vinculadas às Áres de Atuação do IF Sudeste MG "] = 0 
+        this.extensao["Atividades Resultantes de Projetos e Programas de Extensão, Tais como Apresentações em Eventos e Publicações de Caráter Extensionista "] = 0 
+        this.extensao["Organização e/ou Coordenação de Visitas Técnicas Institucionais de Caráter Extensionista"] = 0 
+        this.extensao["Coordenação e/ou Participação de Grupos de Estudos em Ativiades de Extensão Cadastrados na Diretoria de Extensão "] = 0 
+        this.extensao["Relatório, Parcial ou Final, de Atividades Locais, Regionais, Nacionais ou Internacionais de Extensão"] = 0 
+        this.extensao["Orientação de Alunos em Cumprimento de Atividades e/ou de Projetos de Extensão "] = 0 
+        this.extensao["Coordenação de Núcleos de Estudos Interdisciplinares "] = 0 
+        this.extensao["Tutoria de Empresas Juniores"] = 0 
+        this.extensao["Atividades em Cursos e Eventos de Extensão Aprovados e Cadastrados na PROEX ou Diretorias de Extensão"] = 0 
+        this.extensao["Preparação de Trabalho a ser Apresentado em Eventos Artísticos-Culturais "] = 0 
+        this.extensao["Editoração de Revistas Culturais, de Extensão Locais, Regionais, Nacionais ou Internacionais"] = 0 
+        this.extensao["Participação como Conferencista Convidado em Eventos Desportivos ou ArtísticoCulturais, Locais, Regionais, Nacionais ou Internacionais "] = 0 
+        this.extensao["Atividades de Assessoria, Minicursoen Congresso, Consultoria, Perícia ou Sindiância cadastradas na PROEX e ou Diretorias de Extensão "] = 0 
+        this.extensao["Participação em Concertos, Recitais e Apresentações Diversas como Instrumentista, Orquestradorm Arranjador, Compositor, Regente ou Solista "] = 0 
+        this.extensao["Produção Artística em Mídia: Documentarios e/ou Material Didático, Programa de Televisão, Rádio, Video ou Videoconferência, Gravação e Edição de CD, DVD ou Outras Mídias"] = 0 
+        this.extensao["Direção e Montagem de Espetáculos Musicais, Teatrais, Dança e Exposições Apresentadas ao Público"] = 0 
+        this.extensao["Outras Atividades de Natureza Similar"] = 0 
+&nbsp;
+        // atividades de gestão institucional e representações
+        this.gestao_inst_repre["Diretorias Sistêmicas, Chefias e Coordenadorias e Ensino, Pesquisa e Extensão, Planejamento Institucional"] = 0
+        this.gestao_inst_repre["Atividades de Coordenação de Curso"] = 0
+        this.gestao_inst_repre["Atividades de Chefia ou Coordenação de Laboratório de Pesquisa, Ensino, Desenvolvimento Tecnológico e/ou Inovação"] = 0
+        this.gestao_inst_repre["Atividades Referentes aos Processos de Cotação, Compra, Conferência de Materiais de Processos Licitatórios"] = 0
+        this.gestao_inst_repre["Atividades não Remuneradas de Participação em Comissões Permanentes, Comitês, Fóruns e Representações Internas e Externas ao IF Sudeste MG "] = 0
+        this.gestao_inst_repre["Representação Acadêmica e Participação em Órgãos de Formulação e Execução de Políticas Públicas de Ensino, Ciência e Tecnologia e de Políticas Sociais"] = 0
+        this.gestao_inst_repre["Atividades de Participação em Comissões Temporarias"] = 0
+        this.gestao_inst_repre["Atividades de Representação Interna tais como Colegiados, Conselhos, Núcleos e Docentes Estruturantes"] = 0
+        this.gestao_inst_repre["Atividade de Representação Externa"] = 0
+        this.gestao_inst_repre["Representação na Entidade Sindical ou de Associação de Docentes que Legalmente Representa a Categoria "] = 0
+        this.gestao_inst_repre["Atividades de Participação em Banca Examinadora de Concurso Público para Professor Efetivo, Processos Simplificados de Docentes, bem Como Bancas de Seleção de Estagiários"] = 0
+        this.gestao_inst_repre["Participação em Banca Examinadora de Seleção de Doutorado, Mestrado e Especialização"] = 0
+        
+        // atividades de qualificação e capacitação
+        this.quali_capac["Curso de Graduação"] = 0
+        this.quali_capac["Curso de Pós-Graduação"] = 0
+        this.quali_capac["Curso de Mestrado"] = 0
+        this.quali_capac["Curso de Doutorado"] = 0
+        this.quali_capac["Curso de Capacitação"] = 0
+&nbsp;
+    }
+&nbsp;
+    setChPrepManuEnsino(vetor) {
+        if (!Array.isArray(vetor)) {
+            throw new Error("O parâmetro deve ser um array.");
+           
+        }
+    
+        let keys = Object.keys(this.prep_manu_ensino);
+    
+        if (vetor.length !== keys.length) {
+            throw new Error("O número de valores não corresponde ao número de chaves.");
+        }
+    
+        keys.forEach((key, index) =&gt; {
+            this.prep_manu_ensino[key] = vetor[index];
+        });
+    }
+&nbsp;
+    setChApoioEnsino(vetor) {
+        if (!Array.isArray(vetor)) {
+            throw new Error("O parâmetro deve ser um array.");
+        }
+    
+        let keys = Object.keys(this.apoio_ensino);
+    
+        if (vetor.length !== keys.length) {
+            throw new Error("O número de valores não corresponde ao número de chaves.");
+        }
+    
+        keys.forEach((key, index) =&gt; {
+            this.apoio_ensino[key] = vetor[index];
+        });
+    }
+&nbsp;
+    setOrientacao(vetor) {
+        if (!Array.isArray(vetor)) {
+            throw new Error("O parâmetro deve ser um array.");
+        }
+    
+        let keys = Object.keys(this.orientacao);
+    
+        if (vetor.length !== keys.length) {
+            throw new Error("O número de valores não corresponde ao número de chaves.");
+        }
+    
+        keys.forEach((key, index) =&gt; {
+            this.orientacao[key] = vetor[index];
+        });
+    }
+&nbsp;
+    setPesquisaIno(vetor) {
+        if (!Array.isArray(vetor)) {
+            throw new Error("O parâmetro deve ser um array.");
+        }
+    
+        let keys = Object.keys(this.pesquisa_ino);
+    
+        if (vetor.length !== keys.length) {
+            throw new Error("O número de valores não corresponde ao número de chaves.");
+        }
+    
+        keys.forEach((key, index) =&gt; {
+            this.pesquisa_ino[key] = vetor[index];
+        });
+    }
+&nbsp;
+    setExtensao(vetor) {
+        if (!Array.isArray(vetor)) {
+            throw new Error("O parâmetro deve ser um array.");
+        }
+    
+        let keys = Object.keys(this.extensao);
+    
+        if (vetor.length !== keys.length) {
+            throw new Error("O número de valores não corresponde ao número de chaves.");
+        }
+    
+        keys.forEach((key, index) =&gt; {
+            this.extensao[key] = vetor[index];
+        });
+    }
+&nbsp;
+    setGestaoInstRepre(vetor) {
+        if (!Array.isArray(vetor)) {
+            throw new Error("O parâmetro deve ser um array.");
+        }
+    
+        let keys = Object.keys(this.gestao_inst_repre);
+    
+        if (vetor.length !== keys.length) {
+            throw new Error("O número de valores não corresponde ao número de chaves.");
+        }
+    
+        keys.forEach((key, index) =&gt; {
+            this.gestao_inst_repre[key] = vetor[index];
+        });
+    }
+&nbsp;
+    setQualiCapac(vetor) {
+        if (!Array.isArray(vetor)) {
+            throw new Error("O parâmetro deve ser um array.");
+        }
+    
+        let keys = Object.keys(this.quali_capac);
+    
+        if (vetor.length !== keys.length) {
+            throw new Error("O número de valores não corresponde ao número de chaves.");
+        }
+    
+        keys.forEach((key, index) =&gt; {
+            this.quali_capac[key] = vetor[index];
+        });
+    }
+&nbsp;
+    setJustificativa(just) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if(typeof just != "string")
+            throw new Error("A justificativa deve ser uma string");
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.justificativa = just;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    ge</span>tChPrepManuEnsino() { <span class="cstat-no" title="statement not covered" >return this.prep_manu_ensino; </span>}
+<span class="fstat-no" title="function not covered" >    ge</span>tApoioEnsino() { <span class="cstat-no" title="statement not covered" >return this.apoio_ensino; </span>}
+<span class="fstat-no" title="function not covered" >    ge</span>tOrientacao() { <span class="cstat-no" title="statement not covered" >return this.orientacao; </span>}
+<span class="fstat-no" title="function not covered" >    ge</span>tPesquisaIno() { <span class="cstat-no" title="statement not covered" >return this.pesquisa_ino; </span>}
+<span class="fstat-no" title="function not covered" >    ge</span>tExtensao() { <span class="cstat-no" title="statement not covered" >return this.extensao; </span>}
+<span class="fstat-no" title="function not covered" >    ge</span>tGestaoInstRepre() { <span class="cstat-no" title="statement not covered" >return this.gestao_inst_repre; </span>}
+<span class="fstat-no" title="function not covered" >    ge</span>tQualiCapac() { <span class="cstat-no" title="statement not covered" >return this.quali_capac; </span>}
+<span class="fstat-no" title="function not covered" >    ge</span>tJustificativa() { <span class="cstat-no" title="statement not covered" >return this.justificativa; </span>}
+&nbsp;
+}
+&nbsp;
+&nbsp;
+module.exports = Rid;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2025-03-17T14:00:36.751Z
+            </div>
+        <script src="../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
+    </body>
+</html>
+    

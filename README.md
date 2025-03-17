@@ -13,6 +13,8 @@
 
 #### 1. Para rodar os testes é necessario:
 ##### Rodar todos os testes:
+    npm run test:coverage // com cobertura
     npm test
 ##### Rodar apenas o teste escolhido
-    npx jest __tests__/(Nome do arquivo).test.js --verbose
+    npx jest __tests__/(nome do arquivo).test.js --verbose
+

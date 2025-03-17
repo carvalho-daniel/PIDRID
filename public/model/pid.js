@@ -117,14 +117,12 @@ module.exports = class pid {
     setChPrepManuEnsino(vetor) {
         if (!Array.isArray(vetor)) {
             throw new Error("O parâmetro deve ser um array.");
-            return;
         }
     
         let keys = Object.keys(this.prep_manu_ensino);
     
-        if (vetor.length !== keys.length) {
-            console.error("O número de valores não corresponde ao número de chaves.");
-            return;
+        if (vetor.length != keys.length) {
+            throw new Error("O número de valores não corresponde ao número de chaves.");
         }
     
         keys.forEach((key, index) => {
@@ -139,7 +137,7 @@ module.exports = class pid {
     
         let keys = Object.keys(this.apoio_ensino);
     
-        if (vetor.length !== keys.length) {
+        if (vetor.length != keys.length) {
             throw new Error("O número de valores não corresponde ao número de chaves.");
         }
     
@@ -155,7 +153,7 @@ module.exports = class pid {
     
         let keys = Object.keys(this.orientacao);
     
-        if (vetor.length !== keys.length) {
+        if (vetor.length != keys.length) {
             throw new Error("O número de valores não corresponde ao número de chaves.");
         }
     
@@ -171,7 +169,7 @@ module.exports = class pid {
     
         let keys = Object.keys(this.pesquisa_ino);
     
-        if (vetor.length !== keys.length) {
+        if (vetor.length != keys.length) {
             throw new Error("O número de valores não corresponde ao número de chaves.");
         }
     
@@ -187,7 +185,7 @@ module.exports = class pid {
     
         let keys = Object.keys(this.extensao);
     
-        if (vetor.length !== keys.length) {
+        if (vetor.length != keys.length) {
             throw new Error("O número de valores não corresponde ao número de chaves.");
         }
     
@@ -203,7 +201,7 @@ module.exports = class pid {
     
         let keys = Object.keys(this.gestao_inst_repre);
     
-        if (vetor.length !== keys.length) {
+        if (vetor.length != keys.length) {
             throw new Error("O número de valores não corresponde ao número de chaves.");
         }
     
@@ -219,7 +217,7 @@ module.exports = class pid {
     
         let keys = Object.keys(this.quali_capac);
     
-        if (vetor.length !== keys.length) {
+        if (vetor.length != keys.length) {
             throw new Error("O número de valores não corresponde ao número de chaves.");
         }
     

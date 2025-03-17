@@ -7,8 +7,11 @@ describe('Classe PID', () => {
         expect(pid.idProf).toBe(101);
     });
 
-    it('Deve lançar erro ao criar PID sem id', () => {
+    it('Deve lançar erro ao criar PID sem id ou se o id não for número', () => {
         expect(() => new PID()).toThrow(Error);
+        expect(() => new PID({})).toThrow(Error);
+        expect(() => new PID([])).toThrow(Error);
+        expect(() => new PID("adsas")).toThrow(Error);
     });
 
     it('Deve mudar o id do PID', () => {
@@ -78,10 +81,6 @@ describe('Classe PID', () => {
             expect(pid.quali_capac[key]).toBe(vetorTeste[index]);
         });
         
-
-        expect(() => pid.setJustificativa([1,2])).toThrow("A justificativa deve ser uma string");
-        expect(() => pid.setJustificativa(1)).toThrow("A justificativa deve ser uma string");
-        expect(() => pid.setJustificativa({})).toThrow("A justificativa deve ser uma string");
     });
 
     it('Deve lançar erro caso não seja um array', () => {
@@ -129,4 +128,45 @@ describe('Classe PID', () => {
             expect(pid.quali_capac[key]).toBe(0);
         });
     });
+
+    it('Deve lançar erro caso os ch não sejam arrays', ()=>{
+        var pid = new PID(1);
+        expect(()=> pid.setChApoioEnsino("")).toThrow(Error);
+        expect(()=> pid.setChApoioEnsino("")).toThrow(Error);
+        expect(()=> pid.setOrientacao("")).toThrow(Error);
+        expect(()=> pid.setPesquisaIno("")).toThrow(Error);
+        expect(()=> pid.setExtensao("")).toThrow(Error);
+        expect(()=> pid.setGestaoInstRepre("")).toThrow(Error);
+        expect(()=> pid.setQualiCapac("")).toThrow(Error);
+    });
+
+    it('Deve lançar erro caso o tamanho do vetor esteja errado', ()=>{
+        var pid = new PID(1);
+        expect(()=> pid.setChPrepManuEnsino([1,2])).toThrow(Error);
+        expect(()=> pid.setChApoioEnsino([1,2])).toThrow(Error);
+        expect(()=> pid.setOrientacao([1,2])).toThrow(Error);
+        expect(()=> pid.setPesquisaIno([1,2])).toThrow(Error);
+        expect(()=> pid.setExtensao([1,2])).toThrow(Error);
+        expect(()=> pid.setGestaoInstRepre([1,2])).toThrow(Error);
+        expect(()=> pid.setQualiCapac([1,2])).toThrow(Error);
+    });
+
+    it('Deve retornar um array', ()=>{
+        var pid = new PID(1);
+        expect(()=> pid.getChPrepManuEnsino()).toBe(Array);
+        expect(()=> pid.getApoioEnsino()).toBe(Array);
+        expect(()=> pid.getOrientacao()).toBe(Array);
+        expect(()=> pid.getPesquisaIno()).toBe(Array);
+        expect(()=> pid.getExtensao()).toBe(Array);
+        expect(()=> pid.getGestaoInstRepre()).toBe(Array);
+        expect(()=> pid.getQualiCapac()).toBe(Array);
+
+    })
+
+    it('A justificativa deve lançar erro caso não seja uma string', ()=>{
+        var pid = new PID(1);
+        expect(() => pid.setJustificativa([1,2])).toThrow("A justificativa deve ser uma string");
+        expect(() => pid.setJustificativa(1)).toThrow("A justificativa deve ser uma string");
+        expect(() => pid.setJustificativa({})).toThrow("A justificativa deve ser uma string");
+    })
 });
