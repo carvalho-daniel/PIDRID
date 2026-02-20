@@ -12,11 +12,3 @@
 
 #### 3. Contudo, a aplicação estara rodando no localhost da maquina. Abra seu navegador de preferencia, e na barra de pesquisa digite:
     http://localhost:3000
-
-## Testes
-### Para o funcionamento do codigo é necessario:
-
-#### 1. Realizar corretamente os comandos de instalação do projeto:
-    Passo: Dowload de Requisitos do Projeto
-
-#### 2. 
